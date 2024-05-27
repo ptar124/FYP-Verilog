@@ -128,6 +128,6 @@ Creating SMT-LIBv2 representation of module top_1.
 Creating SMT-LIBv2 representation of module top_2.
 Creating SMT-LIBv2 representation of module top.
 
-End of script. Logfile hash: e8a4bb2a9b, CPU: user 0.00s system 0.02s, MEM: 11.57 MB peak
+End of script. Logfile hash: e8a4bb2a9b, CPU: user 0.02s system 0.00s, MEM: 11.30 MB peak
 Yosys 0.36+3 (git sha1 a53032104, clang 10.0.0-4ubuntu1 -fPIC -Os)
-Time spent: 51% 2x write_smt2 (0 sec), 12% 2x read_ilang (0 sec), ...
+Time spent: 55% 2x write_smt2 (0 sec), 12% 2x read_ilang (0 sec), ...

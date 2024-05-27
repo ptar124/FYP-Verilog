@@ -3,27 +3,26 @@
 module bug_eval (result);
 
     wire y1, y2;
-    wire [2:0] in;
-    output wire [4:0] result;
+    wire [2:0] in_shiftandmult;
+    output reg [4:0] result;
 
-    top_1 eval_top_1 (.y(y1), .w(in));
+    top_1 eval_top_1 (.y(y1), .w(in_shiftandmult));
 
-    assign in = 3'b100;
+    assign in_shiftandmult = 3'b100;
 
-    wire [3:0] a_num1;
-    wire [3:0] a_num2;
-    wire [3:0] b_num1;
-    wire [3:0] b_num2;
-
-    assign a_num1 = 4'b0010;
-    assign a_num2 = 4'b0001;
-    assign b_num1 = 4'b1000;
-    assign b_num2 = 4'b0100;
+    reg [3:0] a_num1;
+    reg [3:0] a_num2;
+    reg [3:0] b_num1;
+    reg [3:0] b_num2;
 
     reg [4:0] a_sum;
     reg [4:0] b_sum;
 
     always @* begin
+        a_num1 = 4'b0010;
+        a_num2 = 4'b0001;
+        b_num1 = 4'b1000;
+        b_num2 = 4'b0100;
 
         if (y1 == 1) begin
             //GOOD BRANCH

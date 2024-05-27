@@ -7,7 +7,7 @@ module bug_eval(result);
   wire [3:0] b_num1;
   wire [3:0] b_num2;
   wire [4:0] b_sum;
-  wire [2:0] in;
+  wire [2:0] in_shiftandmult;
   output [4:0] result;
   wire y1;
   wire y2;
@@ -22,10 +22,10 @@ module bug_eval(result);
   assign b_num1 = 4'h8;
   assign b_num2 = 4'h4;
   assign b_sum = 5'hxx;
-  assign in = 3'h4;
+  assign in_shiftandmult = 3'h4;
   assign { result[4], result[2:0] } = { 1'h0, result[3], y1, y1 };
   assign y2 = 1'hx;
-endmodule
+  endmodule
 
 module top_1(y, w);
   wire _0_;
