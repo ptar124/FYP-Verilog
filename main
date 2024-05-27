@@ -1,0 +1,61 @@
+#! /mnt/c/Users/ptar1/Documents/oss-cad-suite-linux-x64-20231206/oss-cad-suite/bin/vvp
+:ivl_version "13.0 (devel)" "(s20221226-347-g58dcf39db)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/mnt/c/Users/ptar1/Documents/oss-cad-suite-linux-x64-20231206/oss-cad-suite/lib/ivl/system.vpi";
+:vpi_module "/mnt/c/Users/ptar1/Documents/oss-cad-suite-linux-x64-20231206/oss-cad-suite/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/mnt/c/Users/ptar1/Documents/oss-cad-suite-linux-x64-20231206/oss-cad-suite/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/mnt/c/Users/ptar1/Documents/oss-cad-suite-linux-x64-20231206/oss-cad-suite/lib/ivl/v2005_math.vpi";
+:vpi_module "/mnt/c/Users/ptar1/Documents/oss-cad-suite-linux-x64-20231206/oss-cad-suite/lib/ivl/va_math.vpi";
+S_0x555555cc9180 .scope module, "testbench" "testbench" 2 4;
+ .timescale 0 0;
+L_0x7f181b0200a8 .functor BUFT 1, C4<100>, C4<0>, C4<0>, C4<0>;
+v0x555555d155c0_0 .net "in", 2 0, L_0x7f181b0200a8;  1 drivers
+v0x555555d156d0_0 .net "y1", 0 0, L_0x555555d15c10;  1 drivers
+v0x555555d15790_0 .net "y2", 0 0, L_0x555555d15e90;  1 drivers
+S_0x555555d00bf0 .scope module, "top_1" "top_1" 2 8, 3 3 0, S_0x555555cc9180;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "y";
+    .port_info 1 /INPUT 3 "w";
+L_0x555555d00a70 .functor OR 1, L_0x555555d15830, L_0x555555d158d0, C4<0>, C4<0>;
+L_0x555555d159f0 .functor NOT 1, L_0x555555d00a70, C4<0>, C4<0>, C4<0>;
+L_0x555555d15b50 .functor NOT 1, L_0x555555d15ab0, C4<0>, C4<0>, C4<0>;
+L_0x555555d15c10 .functor AND 1, L_0x555555d159f0, L_0x555555d15b50, C4<1>, C4<1>;
+v0x555555d00e20_0 .net "_0_", 0 0, L_0x555555d159f0;  1 drivers
+v0x555555d14850_0 .net *"_ivl_1", 0 0, L_0x555555d15830;  1 drivers
+v0x555555d14930_0 .net *"_ivl_10", 0 0, L_0x555555d15b50;  1 drivers
+v0x555555d149f0_0 .net *"_ivl_3", 0 0, L_0x555555d158d0;  1 drivers
+v0x555555d14ad0_0 .net *"_ivl_4", 0 0, L_0x555555d00a70;  1 drivers
+v0x555555d14c00_0 .net *"_ivl_9", 0 0, L_0x555555d15ab0;  1 drivers
+v0x555555d14ce0_0 .net "w", 2 0, L_0x7f181b0200a8;  alias, 1 drivers
+v0x555555d14dc0_0 .net "y", 0 0, L_0x555555d15c10;  alias, 1 drivers
+L_0x555555d15830 .part L_0x7f181b0200a8, 1, 1;
+L_0x555555d158d0 .part L_0x7f181b0200a8, 0, 1;
+L_0x555555d15ab0 .part L_0x7f181b0200a8, 2, 1;
+S_0x555555d14ee0 .scope module, "top_2" "top_2" 2 9, 4 1 0, S_0x555555cc9180;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "y";
+    .port_info 1 /INPUT 3 "w";
+L_0x7f181b020018 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x555555d15110_0 .net/2u *"_ivl_0", 0 0, L_0x7f181b020018;  1 drivers
+L_0x7f181b020060 .functor BUFT 1, C4<110>, C4<0>, C4<0>, C4<0>;
+v0x555555d15210_0 .net/2u *"_ivl_2", 2 0, L_0x7f181b020060;  1 drivers
+v0x555555d152f0_0 .net *"_ivl_5", 2 0, L_0x555555d15da0;  1 drivers
+v0x555555d153b0_0 .net "w", 2 0, L_0x7f181b0200a8;  alias, 1 drivers
+v0x555555d15470_0 .net "y", 0 0, L_0x555555d15e90;  alias, 1 drivers
+L_0x555555d15da0 .arith/mult 3, L_0x7f181b0200a8, L_0x7f181b020060;
+L_0x555555d15e90 .shift/r 1, L_0x7f181b020018, L_0x555555d15da0;
+    .scope S_0x555555cc9180;
+T_0 ;
+    %delay 10, 0;
+    %vpi_call 2 15 "$display", "Yosys: %d\012RTL: %d", v0x555555d156d0_0, v0x555555d15790_0 {0 0 0};
+    %vpi_call 2 16 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "testbench.v";
+    "./syn_yosys.v";
+    "./syn_identity.v";

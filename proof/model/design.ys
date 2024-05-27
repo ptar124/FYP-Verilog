@@ -1,0 +1,9 @@
+# running in proof/src/
+read -formal syn_yosys.v
+read -formal syn_identity.v
+read -formal top.v
+prep -top top
+
+hierarchy -smtcheck
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

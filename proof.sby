@@ -1,0 +1,17 @@
+[options]
+multiclock on
+mode prove
+
+[engines]
+smtbmc
+
+[script]
+read -formal syn_yosys.v
+read -formal syn_identity.v
+read -formal top.v
+prep -top top
+
+[files]
+syn_identity.v
+syn_yosys.v
+top.v
