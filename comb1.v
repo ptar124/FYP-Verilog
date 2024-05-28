@@ -1,4 +1,4 @@
-`include "bug_eval.v"
+`include "bug_eval1.v"
 
 module comb;
     wire [4:0] result;
