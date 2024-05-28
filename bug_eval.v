@@ -14,23 +14,21 @@ module bug_eval (result);
     reg [3:0] a_num2;
     reg [3:0] b_num1;
     reg [3:0] b_num2;
-
     reg [4:0] a_sum;
     reg [4:0] b_sum;
 
     always @* begin
-        a_num1 = 4'b0010;
-        a_num2 = 4'b0001;
-        b_num1 = 4'b1000;
-        b_num2 = 4'b0100;
-
         if (y1 == 1) begin
             //GOOD BRANCH
+            a_num1 = 4'b0010;
+            a_num2 = 4'b0001;
             a_sum = a_num1 + a_num2;
             result = a_sum;
         end
         else begin
-            //BAD BRANCH
+            //BAD BRANCH           
+            b_num1 = 4'b1000;
+            b_num2 = 4'b0100;
             b_sum = b_num1 + b_num2;
             result = b_sum;
         end
