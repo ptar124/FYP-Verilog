@@ -6,6 +6,10 @@ iverilog -o main testbench.v
 #/mnt/c/Users/ptar1/Documents/yosys-yosys-0.8/yosys-yosys-0.8/build/yosys -p 'read -formal bug_eval.v; synth; write_verilog -noattr syn_bug_eval_yosys.v'
 #/mnt/c/Users/ptar1/Documents/yosys-yosys-0.35/yosys-yosys-0.35/build/yosys -p 'read -formal bug_eval1.v; synth; write_verilog -noattr syn_bug_eval1_yosys.v'
 yosys -p 'read_verilog -formal bug_eval1.v; synth; write_verilog -noattr syn_bug_eval1_yosys.v'
-yosys -p 'read_verilog -formal bug_evalreg.v; synth; write_verilog -noattr syn_bug_evalreg_yosys.v'
+#yosys -p 'read_verilog -formal bug_evalreg.v; synth; write_verilog -noattr syn_bug_evalreg_yosys.v'
+
+g++ -o stitch.exe stitch.cpp
+./stitch.exe
+
 iverilog -o main comb1.v
 ./main

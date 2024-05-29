@@ -306,6 +306,6 @@ Module top directly or indirectly contains formal properties -> setting "keep" a
 7. Executing RTLIL backend.
 Output filename: ../model/design.il
 
-End of script. Logfile hash: c5aaddd83c, CPU: user 0.01s system 0.01s, MEM: 12.34 MB peak
+End of script. Logfile hash: c5aaddd83c, CPU: user 0.02s system 0.01s, MEM: 12.34 MB peak
 Yosys 0.36+3 (git sha1 a53032104, clang 10.0.0-4ubuntu1 -fPIC -Os)
-Time spent: 23% 5x opt_expr (0 sec), 13% 3x opt_merge (0 sec), ...
+Time spent: 23% 5x opt_expr (0 sec), 13% 4x opt_clean (0 sec), ...
