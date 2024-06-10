@@ -1,113 +1,88 @@
 #include <iostream>
 #include <fstream>
-#include <sstream>
 #include <string>
-#include <regex>
+#include <algorithm>
+#include <cctype>
+#include <sstream>
 
-// Function to read file content into a string
-std::string readFile(const std::string& filePath) {
-    std::ifstream file(filePath);
-    if (!file.is_open()) {
-        throw std::runtime_error("Could not open file: " + filePath);
+// Function to trim leading whitespace characters
+std::string trimLeadingWhitespace(const std::string& str) {
+    size_t start = str.find_first_not_of(" \t");
+    return (start == std::string::npos) ? "" : str.substr(start);
+}
+
+// Function to prefix the last word of the line with the specified prefix
+std::string prefixLastWordWith(const std::string& line, const std::string& prefix) {
+    std::istringstream iss(line);
+    std::string word;
+    std::string result;
+    std::string lastWord;
+    
+    // Read all words into result and keep track of the last word
+    while (iss >> word) {
+        lastWord = word;
     }
-    std::stringstream buffer;
-    buffer << file.rdbuf();
-    return buffer.str();
-}
 
-// Function to prefix variable names in Verilog code
-std::string prefixVariableNames(const std::string& code, const std::string& prefix) {
-    std::regex wireRegRegex(R"((wire|reg)\s+(\[.*?\]\s*)?(\w+))");
-    return std::regex_replace(code, wireRegRegex, "$1 $2" + prefix + "$3");
-}
-
-// Function to update the result assignment in the always block
-std::string updateResultAssignment(const std::string& code) {
-    std::string updatedCode = code;
-    std::string goodResultAssign = "result = a_sum;";
-    std::string badResultAssign = "result = b_sum;";
-
-    size_t pos = updatedCode.find("//GOOD BRANCH");
+    // Find the position of the last word in the original line
+    size_t pos = line.rfind(lastWord);
     if (pos != std::string::npos) {
-        pos = updatedCode.find("//set result = output of goodbranch", pos);
-        if (pos != std::string::npos) {
-            updatedCode.replace(pos, 34, goodResultAssign);
+        result = line.substr(0, pos) + prefix + lastWord;
+    } else {
+        result = line;
+    }
+
+    return result;
+}
+
+void processFile(const std::string& inputFileName, const std::string& outputFileName, const std::string& prefix) {
+    // Open the input and output files
+    std::ifstream inputFile(inputFileName);
+    std::ofstream outputFile(outputFileName);
+
+    // Check if the input file is open
+    if (!inputFile.is_open()) {
+        std::cerr << "Error: could not open input file '" << inputFileName << "'" << std::endl;
+        return;
+    }
+
+    // Check if the output file is open
+    if (!outputFile.is_open()) {
+        std::cerr << "Error: could not open output file '" << outputFileName << "'" << std::endl;
+        inputFile.close();
+        return;
+    }
+
+    // Define the prefixes we are interested in
+    const std::string prefixes[] = {"wire ", "reg ", "input ", "output "};
+
+    std::string line;
+    while (std::getline(inputFile, line)) {
+        // Trim leading whitespace characters from the line
+        std::string trimmedLine = trimLeadingWhitespace(line);
+
+        // Check if the trimmed line starts with any of the prefixes
+        for (const auto& prefixMatch : prefixes) {
+            if (trimmedLine.compare(0, prefixMatch.size(), prefixMatch) == 0) {
+                std::string modifiedLine = prefixLastWordWith(line, prefix);
+                outputFile << modifiedLine << std::endl;  // Write the modified line
+                break;
+            }
         }
     }
 
-    pos = updatedCode.find("//BAD BRANCH");
-    if (pos != std::string::npos) {
-        pos = updatedCode.find("//set result = output of badbranch", pos);
-        if (pos != std::string::npos) {
-            updatedCode.replace(pos, 33, badResultAssign);
-        }
-    }
+    // Close the files
+    inputFile.close();
+    outputFile.close();
 
-    return updatedCode;
-}
-
-// Function to combine files into a new Verilog file
-void combineFiles(const std::string& skelContent, const std::string& goodBranchContent, const std::string& badBranchContent, const std::string& outputFilePath) {
-    std::ofstream outFile(outputFilePath);
-    if (!outFile.is_open()) {
-        throw std::runtime_error("Could not open output file: " + outputFilePath);
-    }
-
-    // Prefix variable names in goodbranch and badbranch content
-    std::string prefixedGoodBranchContent = prefixVariableNames(goodBranchContent, "a_");
-    std::string prefixedBadBranchContent = prefixVariableNames(badBranchContent, "b_");
-
-    // Update the skeleton content
-    std::string modifiedSkelContent = skelContent;
-
-    // Insert goodbranch declarations
-    size_t pos = modifiedSkelContent.find("//goodbranch declarations go here");
-    if (pos != std::string::npos) {
-        modifiedSkelContent.replace(pos, 30, prefixedGoodBranchContent);
-    }
-
-    // Insert badbranch declarations
-    pos = modifiedSkelContent.find("//badbranch declarations go here");
-    if (pos != std::string::npos) {
-        modifiedSkelContent.replace(pos, 29, prefixedBadBranchContent);
-    }
-
-    // Insert goodbranch instantiation
-    std::string goodBranchInstantiation = "goodbranch goodbranch_instance (.num1(a_num1), .num2(a_num2), .sum(a_sum));";
-    pos = modifiedSkelContent.find("//instantiate goodbranch");
-    if (pos != std::string::npos) {
-        modifiedSkelContent.replace(pos, 23, goodBranchInstantiation);
-    }
-
-    // Insert badbranch instantiation
-    std::string badBranchInstantiation = "badbranch badbranch_instance (.num1(b_num1), .num2(b_num2), .sum(b_sum));";
-    pos = modifiedSkelContent.find("//instantiate badbranch");
-    if (pos != std::string::npos) {
-        modifiedSkelContent.replace(pos, 22, badBranchInstantiation);
-    }
-
-    // Update result assignment
-    modifiedSkelContent = updateResultAssignment(modifiedSkelContent);
-
-    // Write the modified skeleton content to the output file
-    outFile << modifiedSkelContent;
-
-    outFile.close();
+    std::cout << "Processing completed for " << inputFileName << ". Check '" << outputFileName << "' for the output." << std::endl;
 }
 
 int main() {
-    try {
-        std::string skelContent = readFile("bug_eval_skel.v");
-        std::string goodBranchContent = readFile("goodbranch.v");
-        std::string badBranchContent = readFile("badbranch.v");
+    // Process goodbranch.v with prefix "a_"
+    processFile("goodbranch.v", "goodbranchdec.txt", "a_");
 
-        combineFiles(skelContent, goodBranchContent, badBranchContent, "bug_eval_combined.v");
-
-        std::cout << "Files combined successfully into bug_eval_combined.v" << std::endl;
-    } catch (const std::exception& e) {
-        std::cerr << e.what() << std::endl;
-        return 1;
-    }
+    // Process badbranch.v with prefix "b_"
+    processFile("badbranch.v", "badbranchdec.txt", "b_");
 
     return 0;
 }

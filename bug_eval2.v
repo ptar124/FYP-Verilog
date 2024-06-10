@@ -1,4 +1,5 @@
 `include "syn_yosys.v"
+`include "syn_vivado.v"
 `include "goodbranch.v"
 `include "badbranch.v"
 
@@ -6,9 +7,16 @@ module bug_eval (result);
 
     wire y1, y2;
     wire [2:0] in_shiftandmult;
+    wire y_viv1;
+    wire w0_viv1;
     output reg [4:0] result;
 
     top_1 eval_top_1 (.y(y1), .w(in_shiftandmult));
+    top_vivado eval_top_vivado (.y(y_viv1), .w0(w0_viv1));
+   
+    assign in_shiftandmult = 3'b100;
+    assign w0_viv1 = 1'b0;
+    
 
     wire [3:0] a_num1;
     wire [3:0] a_num2;
@@ -20,10 +28,8 @@ module bug_eval (result);
     goodbranch goodbranch_instance (.num1(a_num1), .num2(a_num2), .sum(a_sum));
     badbranch badbranch_instance (.num1(b_num1), .num2(b_num2), .sum(b_sum));
 
-    assign in_shiftandmult = 3'b100;
-
     always @* begin
-        if (y1 == 1) begin
+        if (y1 == 1 || yviv1 == 0) begin
             //GOOD BRANCH
             result = a_sum;
         end
