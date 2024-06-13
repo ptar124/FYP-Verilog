@@ -5,6 +5,7 @@
 #include <cctype>
 #include <sstream>
 
+// Function to trim leading whitespace characters
 std::string trimLeadingWhitespace(const std::string& str) {
     size_t start = str.find_first_not_of(" \t");
     return (start == std::string::npos) ? "" : str.substr(start);
@@ -43,12 +44,12 @@ void processFile(const std::string& inputFileName, const std::string& outputFile
     std::ofstream outputFile(outputFileName);
 
     if (!inputFile.is_open()) {
-        std::cerr << "Error: could not open input file '" << inputFileName << "'" << std::endl;
+        std::cerr << "Error: could not open input file " << inputFileName << std::endl;
         return;
     }
 
     if (!outputFile.is_open()) {
-        std::cerr << "Error: could not open output file '" << outputFileName << "'" << std::endl;
+        std::cerr << "Error: could not open output file " << outputFileName << std::endl;
         inputFile.close();
         return;
     }
@@ -59,7 +60,9 @@ void processFile(const std::string& inputFileName, const std::string& outputFile
     while (std::getline(inputFile, line)) {
         std::string trimmedLine = trimLeadingWhitespace(line);
 
-        if (trimmedLine.find("output ") == 0) {
+        if (trimmedLine.find("input ") == 0) {
+            line.erase(line.find("input "), 6);
+        } else if (trimmedLine.find("output ") == 0) {
             line.replace(line.find("output "), 6, "input ");
         }
 

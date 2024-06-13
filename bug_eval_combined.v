@@ -6,11 +6,11 @@
 module bug_eval (
     input wire [3:0] a_num1,
 input wire [3:0] a_num2,
-output wire [4:0] a_out
- ,
+input  wire [4:0] a_out ,
     input wire [3:0] b_num1,
 input wire [3:0] b_num2,
-output wire [4:0] b_out
+input  wire [4:0] b_out,
+output reg [4:0] result
 
 );
 

@@ -1,3 +1,0 @@
-wire [3:0] a_num1,
-wire [3:0] a_num2,
-input  wire [4:0] a_out
