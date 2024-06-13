@@ -1,0 +1,17 @@
+[options]
+multiclock on
+mode prove
+
+[engines]
+smtbmc
+
+[script]
+read -formal syn_wrongmsb.v
+read -formal wrongmsb.v
+read -formal topmsb.v
+prep -topmsb topmsb
+
+[files]
+syn_wrongmsb.v
+wrongmsb_identity.v
+topmsb.v

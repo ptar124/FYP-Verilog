@@ -1,8 +1,14 @@
-#sed 's/top/top_1/' rtl.v > rtl_yosys.v
+sed 's/top/top_1/' rtl.v > rtl_yosys.v
+sed 's/top/top_2/' rtl.v > syn_identity.v
+
+sed 's/topmsb/topmsb_1/' wrongmsb.v > wrongmsb_yosys.v
+sed 's/topmsb/topmsb_2/' wrongmsb.v > wrongmsb_identity.v
+
 #/mnt/c/Users/ptar1/Documents/yosys-yosys-0.8b/yosys-yosys-0.8b/build/yosys -p 'read -formal rtl_yosys.v; synth; write_verilog -noattr syn_yosys.v'
-/mnt/c/Users/ptar1/Documents/yosys-yosys-0.8b/yosys-yosys-0.8b/build/yosys -p 'read -formal wrongmsb.v; synth; write_verilog -noattr wrongmsb.v'
+/mnt/c/Users/ptar1/Documents/yosys-yosys-0.8b/yosys-yosys-0.8b/build/yosys -p 'read -formal wrongmsb.v; synth; write_verilog -noattr syn_wrongmsb.v'
 yosys -p 'read_verilog -formal rtl_yosys.v; synth; write_verilog -noattr syn_yosys.v'
 sby -f proof.sby
+sby -f proofmsb.sby
 iverilog -o main testbench.v
 
 #/mnt/c/Users/ptar1/Documents/yosys-yosys-0.8/yosys-yosys-0.8/build/yosys -p 'read -formal bug_eval.v; synth; write_verilog -noattr syn_bug_eval_yosys.v'

@@ -1,0 +1,14 @@
+SBY 20:30:06 [proofmsb] Removing directory '/mnt/c/Users/ptar1/Documents/FYP Verilog/proofmsb'.
+SBY 20:30:06 [proofmsb] Copy '/mnt/c/Users/ptar1/Documents/FYP Verilog/syn_wrongmsb.v' to '/mnt/c/Users/ptar1/Documents/FYP Verilog/proofmsb/src/syn_wrongmsb.v'.
+SBY 20:30:06 [proofmsb] Copy '/mnt/c/Users/ptar1/Documents/FYP Verilog/wrongmsb_identity.v' to '/mnt/c/Users/ptar1/Documents/FYP Verilog/proofmsb/src/wrongmsb_identity.v'.
+SBY 20:30:06 [proofmsb] Copy '/mnt/c/Users/ptar1/Documents/FYP Verilog/topmsb.v' to '/mnt/c/Users/ptar1/Documents/FYP Verilog/proofmsb/src/topmsb.v'.
+SBY 20:30:06 [proofmsb] engine_0: smtbmc
+SBY 20:30:06 [proofmsb] base: starting process "cd proofmsb/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY 20:30:07 [proofmsb] base: ERROR: Can't open input file `wrongmsb.v' for reading: No such file or directory
+SBY 20:30:07 [proofmsb] base: finished (returncode=1)
+SBY 20:30:07 [proofmsb] base: task failed. ERROR.
+SBY 20:30:07 [proofmsb] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 20:30:07 [proofmsb] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 20:30:07 [proofmsb] summary: engine_0 (smtbmc) did not return a status
+SBY 20:30:07 [proofmsb] summary: engine_0 did not produce any traces
+SBY 20:30:07 [proofmsb] DONE (ERROR, rc=16)

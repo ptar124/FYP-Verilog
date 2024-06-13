@@ -1,0 +1,309 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.36+3 (git sha1 a53032104, clang 10.0.0-4ubuntu1 -fPIC -Os)
+
+
+-- Executing script file `../model/design.ys' --
+
+1. Executing Verilog-2005 frontend: syn_yosys.v
+Parsing formal SystemVerilog input from `syn_yosys.v' to AST representation.
+Storing AST representation for module `$abstract\top_1'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: syn_identity.v
+Parsing formal SystemVerilog input from `syn_identity.v' to AST representation.
+Storing AST representation for module `$abstract\top_2'.
+Successfully finished Verilog frontend.
+
+3. Executing Verilog-2005 frontend: top.v
+Parsing formal SystemVerilog input from `top.v' to AST representation.
+Storing AST representation for module `$abstract\top'.
+Successfully finished Verilog frontend.
+
+4. Executing PREP pass.
+
+4.1. Executing HIERARCHY pass (managing design hierarchy).
+
+4.2. Executing AST frontend in derive mode using pre-parsed AST for module `\top'.
+Generating RTLIL representation for module `\top'.
+
+4.2.1. Analyzing design hierarchy..
+Top module:  \top
+
+4.2.2. Executing AST frontend in derive mode using pre-parsed AST for module `\top_2'.
+Generating RTLIL representation for module `\top_2'.
+
+4.2.3. Executing AST frontend in derive mode using pre-parsed AST for module `\top_1'.
+Generating RTLIL representation for module `\top_1'.
+
+4.2.4. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \top_2
+Used module:     \top_1
+
+4.2.5. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \top_2
+Used module:     \top_1
+Removing unused module `$abstract\top'.
+Removing unused module `$abstract\top_2'.
+Removing unused module `$abstract\top_1'.
+Removed 3 unused modules.
+Module top directly or indirectly contains formal properties -> setting "keep" attribute.
+
+4.3. Executing PROC pass (convert processes to netlists).
+
+4.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+4.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 3 assignments to connections.
+
+4.3.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\top.$proc$top.v:0$7'.
+  Set init value: $formal$top.v:9$1_EN = 1'0
+
+4.3.5. Executing PROC_ARST pass (detect async resets in processes).
+
+4.3.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+
+4.3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\top.$proc$top.v:0$7'.
+Creating decoders for process `\top.$proc$top.v:8$2'.
+
+4.3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+4.3.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\top.$formal$top.v:9$1_CHECK' using process `\top.$proc$top.v:8$2'.
+  created $dff cell `$procdff$13' with positive edge clock.
+Creating register for signal `\top.$formal$top.v:9$1_EN' using process `\top.$proc$top.v:8$2'.
+  created $dff cell `$procdff$14' with positive edge clock.
+
+4.3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `top.$proc$top.v:0$7'.
+Removing empty process `top.$proc$top.v:8$2'.
+Cleaned up 0 empty switches.
+
+4.3.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top_1.
+Optimizing module top_2.
+Optimizing module top.
+
+4.4. Executing FUTURE pass.
+
+4.5. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top_1.
+Optimizing module top_2.
+Optimizing module top.
+
+4.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top_1..
+Finding unused cells or wires in module \top_2..
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 5 unused wires.
+<suppressed ~3 debug messages>
+
+4.7. Executing CHECK pass (checking for obvious problems).
+Checking module top...
+Checking module top_1...
+Checking module top_2...
+Found and reported 0 problems.
+
+4.8. Executing OPT pass (performing simple optimizations).
+
+4.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+Optimizing module top_1.
+Optimizing module top_2.
+
+4.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Finding identical cells in module `\top_1'.
+Finding identical cells in module `\top_2'.
+Removed a total of 0 cells.
+
+4.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \top_1..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module \top_2..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+4.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+  Optimizing cells in module \top_1.
+  Optimizing cells in module \top_2.
+Performed a total of 0 changes.
+
+4.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Finding identical cells in module `\top_1'.
+Finding identical cells in module `\top_2'.
+Removed a total of 0 cells.
+
+4.8.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Finding unused cells or wires in module \top_1..
+Finding unused cells or wires in module \top_2..
+
+4.8.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+Optimizing module top_1.
+Optimizing module top_2.
+
+4.8.8. Finished OPT passes. (There is nothing left to do.)
+
+4.9. Executing WREDUCE pass (reducing word size of cells).
+
+4.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Finding unused cells or wires in module \top_1..
+Finding unused cells or wires in module \top_2..
+
+4.11. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+4.12. Executing OPT pass (performing simple optimizations).
+
+4.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+Optimizing module top_1.
+Optimizing module top_2.
+
+4.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Finding identical cells in module `\top_1'.
+Finding identical cells in module `\top_2'.
+Removed a total of 0 cells.
+
+4.12.3. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Finding unused cells or wires in module \top_1..
+Finding unused cells or wires in module \top_2..
+
+4.12.4. Finished fast OPT passes.
+
+4.13. Printing statistics.
+
+=== top ===
+
+   Number of wires:                  7
+   Number of wire bits:              9
+   Number of public wires:           4
+   Number of public wire bits:       6
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  6
+     $assert                         1
+     $dff                            2
+     $eq                             1
+     top_1                           1
+     top_2                           1
+
+=== top_1 ===
+
+   Number of wires:                  3
+   Number of wire bits:              5
+   Number of public wires:           2
+   Number of public wire bits:       4
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  2
+     $not                            1
+     $or                             1
+
+=== top_2 ===
+
+   Number of wires:                  3
+   Number of wire bits:              7
+   Number of public wires:           2
+   Number of public wire bits:       4
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  2
+     $mul                            1
+     $shr                            1
+
+=== design hierarchy ===
+
+   top                               1
+     top_1                           1
+     top_2                           1
+
+   Number of wires:                 13
+   Number of wire bits:             21
+   Number of public wires:           8
+   Number of public wire bits:      14
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  8
+     $assert                         1
+     $dff                            2
+     $eq                             1
+     $mul                            1
+     $not                            1
+     $or                             1
+     $shr                            1
+
+4.14. Executing CHECK pass (checking for obvious problems).
+Checking module top...
+Checking module top_1...
+Checking module top_2...
+Found and reported 0 problems.
+
+5. Executing HIERARCHY pass (managing design hierarchy).
+
+5.1. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \top_1
+Used module:     \top_2
+
+5.2. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \top_1
+Used module:     \top_2
+Removed 0 unused modules.
+Module top directly or indirectly contains formal properties -> setting "keep" attribute.
+
+6. Executing jny backend.
+
+7. Executing RTLIL backend.
+Output filename: ../model/design.il
+
+End of script. Logfile hash: d666ef0826, CPU: user 0.01s system 0.01s, MEM: 12.12 MB peak
+Yosys 0.36+3 (git sha1 a53032104, clang 10.0.0-4ubuntu1 -fPIC -Os)
+Time spent: 25% 5x opt_expr (0 sec), 14% 4x opt_clean (0 sec), ...
