@@ -91,7 +91,7 @@ void insertCode(const std::string &skeletonFile, const std::string &outputFile,
 }
 
 int main() {
-    std::string skeletonFile = "bug_eval_skel.v";
+    std::string skeletonFile = "bug_eval_modified.v";
     std::string outputFile = "bug_eval_combined.v";
     std::string goodbranchdecFile = "goodbranchdec.txt";
     std::string badbranchdecFile = "badbranchdec.txt";

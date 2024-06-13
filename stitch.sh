@@ -1,6 +1,9 @@
 g++ -o sepdec.exe sepdec.cpp
 ./sepdec.exe
 
+g++ -o seprminout.exe seprminout.cpp
+./seprminout.exe
+
 g++ -o sepcontent.exe sepcontent.cpp
 ./sepcontent.exe
 

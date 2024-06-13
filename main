@@ -7,42 +7,42 @@
 :vpi_module "/mnt/c/Users/ptar1/Documents/oss-cad-suite-linux-x64-20231206/oss-cad-suite/lib/ivl/vhdl_textio.vpi";
 :vpi_module "/mnt/c/Users/ptar1/Documents/oss-cad-suite-linux-x64-20231206/oss-cad-suite/lib/ivl/v2005_math.vpi";
 :vpi_module "/mnt/c/Users/ptar1/Documents/oss-cad-suite-linux-x64-20231206/oss-cad-suite/lib/ivl/va_math.vpi";
-S_0x555556f36180 .scope module, "testbench" "testbench" 2 4;
+S_0x5555560ac180 .scope module, "testbench" "testbench" 2 4;
  .timescale 0 0;
-L_0x7f3e7fb510a8 .functor BUFT 1, C4<100>, C4<0>, C4<0>, C4<0>;
-v0x555556f81240_0 .net "in", 2 0, L_0x7f3e7fb510a8;  1 drivers
-v0x555556f81350_0 .net "y1", 0 0, L_0x555556f816a0;  1 drivers
-v0x555556f81410_0 .net "y2", 0 0, L_0x555556f818a0;  1 drivers
-S_0x555556f6dbf0 .scope module, "top_1" "top_1" 2 8, 3 3 0, S_0x555556f36180;
- .timescale 0 0;
-    .port_info 0 /OUTPUT 1 "y";
-    .port_info 1 /INPUT 3 "w";
-L_0x555556f6da70 .functor OR 1, L_0x555556f814b0, L_0x555556f81550, C4<0>, C4<0>;
-L_0x555556f816a0 .functor NOT 1, L_0x555556f6da70, C4<0>, C4<0>, C4<0>;
-v0x555556f6de20_0 .net *"_ivl_1", 0 0, L_0x555556f814b0;  1 drivers
-v0x555556f80770_0 .net *"_ivl_3", 0 0, L_0x555556f81550;  1 drivers
-v0x555556f80850_0 .net *"_ivl_4", 0 0, L_0x555556f6da70;  1 drivers
-v0x555556f80910_0 .net "w", 2 0, L_0x7f3e7fb510a8;  alias, 1 drivers
-v0x555556f809f0_0 .net "y", 0 0, L_0x555556f816a0;  alias, 1 drivers
-L_0x555556f814b0 .part L_0x7f3e7fb510a8, 1, 1;
-L_0x555556f81550 .part L_0x7f3e7fb510a8, 0, 1;
-S_0x555556f80b60 .scope module, "top_2" "top_2" 2 9, 4 1 0, S_0x555556f36180;
+L_0x7f9bae2480a8 .functor BUFT 1, C4<100>, C4<0>, C4<0>, C4<0>;
+v0x5555560f7240_0 .net "in", 2 0, L_0x7f9bae2480a8;  1 drivers
+v0x5555560f7350_0 .net "y1", 0 0, L_0x5555560f76a0;  1 drivers
+v0x5555560f7410_0 .net "y2", 0 0, L_0x5555560f78a0;  1 drivers
+S_0x5555560e3bf0 .scope module, "top_1" "top_1" 2 8, 3 3 0, S_0x5555560ac180;
  .timescale 0 0;
     .port_info 0 /OUTPUT 1 "y";
     .port_info 1 /INPUT 3 "w";
-L_0x7f3e7fb51018 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
-v0x555556f80d90_0 .net/2u *"_ivl_0", 0 0, L_0x7f3e7fb51018;  1 drivers
-L_0x7f3e7fb51060 .functor BUFT 1, C4<110>, C4<0>, C4<0>, C4<0>;
-v0x555556f80e90_0 .net/2u *"_ivl_2", 2 0, L_0x7f3e7fb51060;  1 drivers
-v0x555556f80f70_0 .net *"_ivl_5", 2 0, L_0x555556f817b0;  1 drivers
-v0x555556f81030_0 .net "w", 2 0, L_0x7f3e7fb510a8;  alias, 1 drivers
-v0x555556f810f0_0 .net "y", 0 0, L_0x555556f818a0;  alias, 1 drivers
-L_0x555556f817b0 .arith/mult 3, L_0x7f3e7fb510a8, L_0x7f3e7fb51060;
-L_0x555556f818a0 .shift/r 1, L_0x7f3e7fb51018, L_0x555556f817b0;
-    .scope S_0x555556f36180;
+L_0x5555560e3a70 .functor OR 1, L_0x5555560f74b0, L_0x5555560f7550, C4<0>, C4<0>;
+L_0x5555560f76a0 .functor NOT 1, L_0x5555560e3a70, C4<0>, C4<0>, C4<0>;
+v0x5555560e3e20_0 .net *"_ivl_1", 0 0, L_0x5555560f74b0;  1 drivers
+v0x5555560f6770_0 .net *"_ivl_3", 0 0, L_0x5555560f7550;  1 drivers
+v0x5555560f6850_0 .net *"_ivl_4", 0 0, L_0x5555560e3a70;  1 drivers
+v0x5555560f6910_0 .net "w", 2 0, L_0x7f9bae2480a8;  alias, 1 drivers
+v0x5555560f69f0_0 .net "y", 0 0, L_0x5555560f76a0;  alias, 1 drivers
+L_0x5555560f74b0 .part L_0x7f9bae2480a8, 1, 1;
+L_0x5555560f7550 .part L_0x7f9bae2480a8, 0, 1;
+S_0x5555560f6b60 .scope module, "top_2" "top_2" 2 9, 4 1 0, S_0x5555560ac180;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "y";
+    .port_info 1 /INPUT 3 "w";
+L_0x7f9bae248018 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+v0x5555560f6d90_0 .net/2u *"_ivl_0", 0 0, L_0x7f9bae248018;  1 drivers
+L_0x7f9bae248060 .functor BUFT 1, C4<110>, C4<0>, C4<0>, C4<0>;
+v0x5555560f6e90_0 .net/2u *"_ivl_2", 2 0, L_0x7f9bae248060;  1 drivers
+v0x5555560f6f70_0 .net *"_ivl_5", 2 0, L_0x5555560f77b0;  1 drivers
+v0x5555560f7030_0 .net "w", 2 0, L_0x7f9bae2480a8;  alias, 1 drivers
+v0x5555560f70f0_0 .net "y", 0 0, L_0x5555560f78a0;  alias, 1 drivers
+L_0x5555560f77b0 .arith/mult 3, L_0x7f9bae2480a8, L_0x7f9bae248060;
+L_0x5555560f78a0 .shift/r 1, L_0x7f9bae248018, L_0x5555560f77b0;
+    .scope S_0x5555560ac180;
 T_0 ;
     %delay 10, 0;
-    %vpi_call 2 15 "$display", "Yosys: %d\012RTL: %d", v0x555556f81350_0, v0x555556f81410_0 {0 0 0};
+    %vpi_call 2 15 "$display", "Yosys: %d\012RTL: %d", v0x5555560f7350_0, v0x5555560f7410_0 {0 0 0};
     %vpi_call 2 16 "$finish" {0 0 0};
     %end;
     .thread T_0;
