@@ -83,7 +83,7 @@
             ],
             "cells": [
                 {
-                  "name": "$procdff$15",
+                  "name": "$procdff$13",
                   "attributes": {
                     "src": "top.v:8.3-11.8"
                   },
@@ -93,7 +93,7 @@
                   }
                 },
                 {
-                  "name": "$procdff$16",
+                  "name": "$procdff$14",
                   "attributes": {
                     "src": "top.v:8.3-11.8"
                   },
@@ -197,9 +197,9 @@
             ],
             "cells": [
                 {
-                  "name": "$or$syn_yosys.v:7$11",
+                  "name": "$or$syn_yosys.v:8$11",
                   "attributes": {
-                    "src": "syn_yosys.v:7.18-7.29"
+                    "src": "syn_yosys.v:8.16-8.27"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -227,59 +227,13 @@
             ],
             "cells": [
                 {
-                  "name": "$not$syn_yosys.v:7$12",
+                  "name": "$not$syn_yosys.v:8$12",
                   "attributes": {
-                    "src": "syn_yosys.v:7.16-7.30"
+                    "src": "syn_yosys.v:8.14-8.28"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
                     "A_WIDTH": "00000000000000000000000000000001",
-                    "Y_WIDTH": "00000000000000000000000000000001"
-                  }
-                },
-                {
-                  "name": "$not$syn_yosys.v:8$13",
-                  "attributes": {
-                    "src": "syn_yosys.v:8.20-8.27"
-                  },
-                  "parameters": {
-                    "A_SIGNED": "00000000000000000000000000000000",
-                    "A_WIDTH": "00000000000000000000000000000001",
-                    "Y_WIDTH": "00000000000000000000000000000001"
-                  }
-                }
-            ]
-          },
-          {
-            "type": "$and",
-            "ports": [
-                {
-                  "name": "A",
-                  "direction": "io",
-                  "range": [0, 0]
-                },
-                {
-                  "name": "B",
-                  "direction": "io",
-                  "range": [0, 0]
-                },
-                {
-                  "name": "Y",
-                  "direction": "",
-                  "range": [0, 0]
-                }
-            ],
-            "cells": [
-                {
-                  "name": "$and$syn_yosys.v:8$14",
-                  "attributes": {
-                    "src": "syn_yosys.v:8.14-8.27"
-                  },
-                  "parameters": {
-                    "A_SIGNED": "00000000000000000000000000000000",
-                    "A_WIDTH": "00000000000000000000000000000001",
-                    "B_SIGNED": "00000000000000000000000000000000",
-                    "B_WIDTH": "00000000000000000000000000000001",
                     "Y_WIDTH": "00000000000000000000000000000001"
                   }
                 }

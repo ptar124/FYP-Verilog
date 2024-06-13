@@ -1,55 +1,71 @@
-SBY 21:08:34 [proof] Removing directory '/mnt/c/Users/ptar1/Documents/FYP Verilog/proof'.
-SBY 21:08:34 [proof] Copy '/mnt/c/Users/ptar1/Documents/FYP Verilog/syn_identity.v' to '/mnt/c/Users/ptar1/Documents/FYP Verilog/proof/src/syn_identity.v'.
-SBY 21:08:34 [proof] Copy '/mnt/c/Users/ptar1/Documents/FYP Verilog/syn_yosys.v' to '/mnt/c/Users/ptar1/Documents/FYP Verilog/proof/src/syn_yosys.v'.
-SBY 21:08:34 [proof] Copy '/mnt/c/Users/ptar1/Documents/FYP Verilog/top.v' to '/mnt/c/Users/ptar1/Documents/FYP Verilog/proof/src/top.v'.
-SBY 21:08:34 [proof] engine_0: smtbmc
-SBY 21:08:35 [proof] base: starting process "cd proof/src; yosys -ql ../model/design.log ../model/design.ys"
-SBY 21:08:35 [proof] base: finished (returncode=0)
-SBY 21:08:35 [proof] prep: starting process "cd proof/model; yosys -ql design_prep.log design_prep.ys"
-SBY 21:08:36 [proof] prep: finished (returncode=0)
-SBY 21:08:36 [proof] smt2: starting process "cd proof/model; yosys -ql design_smt2.log design_smt2.ys"
-SBY 21:08:36 [proof] smt2: finished (returncode=0)
-SBY 21:08:36 [proof] engine_0.basecase: starting process "cd proof; yosys-smtbmc --presat --unroll --noprogress -t 20  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2"
-SBY 21:08:36 [proof] engine_0.induction: starting process "cd proof; yosys-smtbmc --presat --unroll -i --noprogress -t 20  --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-yw engine_0/trace_induct.yw --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2"
-SBY 21:08:37 [proof] engine_0.basecase: ##   0:00:00  Solver: yices
-SBY 21:08:37 [proof] engine_0.induction: ##   0:00:00  Solver: yices
-SBY 21:08:37 [proof] engine_0.induction: ##   0:00:00  Trying induction in step 20..
-SBY 21:08:37 [proof] engine_0.basecase: ##   0:00:00  Checking assumptions in step 0..
-SBY 21:08:37 [proof] engine_0.basecase: ##   0:00:00  Checking assertions in step 0..
-SBY 21:08:37 [proof] engine_0.induction: ##   0:00:00  Trying induction in step 19..
-SBY 21:08:37 [proof] engine_0.basecase: ##   0:00:00  Checking assumptions in step 1..
-SBY 21:08:37 [proof] engine_0.basecase: ##   0:00:00  Checking assertions in step 1..
-SBY 21:08:37 [proof] engine_0.induction: ##   0:00:00  Trying induction in step 18..
-SBY 21:08:37 [proof] engine_0.basecase: ##   0:00:00  BMC failed!
-SBY 21:08:37 [proof] engine_0.basecase: ##   0:00:00  Assert failed in top: top.v:9.25-10.28 ($assert$top.v:9$6)
-SBY 21:08:37 [proof] engine_0.basecase: ##   0:00:00  Writing trace to VCD file: engine_0/trace.vcd
-SBY 21:08:37 [proof] engine_0.induction: ##   0:00:00  Trying induction in step 17..
-SBY 21:08:37 [proof] engine_0.induction: ##   0:00:00  Trying induction in step 16..
-SBY 21:08:37 [proof] engine_0.induction: ##   0:00:00  Trying induction in step 15..
-SBY 21:08:37 [proof] engine_0.basecase: ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace_tb.v
-SBY 21:08:37 [proof] engine_0.induction: ##   0:00:00  Trying induction in step 14..
-SBY 21:08:37 [proof] engine_0.induction: ##   0:00:00  Trying induction in step 13..
-SBY 21:08:37 [proof] engine_0.basecase: ##   0:00:00  Writing trace to constraints file: engine_0/trace.smtc
-SBY 21:08:37 [proof] engine_0.induction: ##   0:00:00  Trying induction in step 12..
-SBY 21:08:37 [proof] engine_0.induction: ##   0:00:00  Trying induction in step 11..
-SBY 21:08:37 [proof] engine_0.basecase: ##   0:00:00  Writing trace to Yosys witness file: engine_0/trace.yw
-SBY 21:08:37 [proof] engine_0.induction: ##   0:00:00  Trying induction in step 10..
-SBY 21:08:37 [proof] engine_0.induction: ##   0:00:00  Trying induction in step 9..
-SBY 21:08:37 [proof] engine_0.induction: ##   0:00:00  Trying induction in step 8..
-SBY 21:08:37 [proof] engine_0.basecase: ##   0:00:00  Status: failed
-SBY 21:08:37 [proof] engine_0.induction: ##   0:00:00  Trying induction in step 7..
-SBY 21:08:37 [proof] engine_0.induction: ##   0:00:00  Trying induction in step 6..
-SBY 21:08:37 [proof] engine_0.induction: ##   0:00:00  Trying induction in step 5..
-SBY 21:08:37 [proof] engine_0.induction: ##   0:00:00  Trying induction in step 4..
-SBY 21:08:37 [proof] engine_0.induction: ##   0:00:00  Trying induction in step 3..
-SBY 21:08:37 [proof] engine_0.induction: ##   0:00:00  Trying induction in step 2..
-SBY 21:08:37 [proof] engine_0.induction: ##   0:00:00  Trying induction in step 1..
-SBY 21:08:37 [proof] engine_0.basecase: finished (returncode=1)
-SBY 21:08:37 [proof] engine_0.basecase: Status returned by engine for basecase: FAIL
-SBY 21:08:37 [proof] engine_0.induction: terminating process
-SBY 21:08:37 [proof] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:02 (2)
-SBY 21:08:37 [proof] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
-SBY 21:08:37 [proof] summary: engine_0 (smtbmc) returned FAIL for basecase
-SBY 21:08:37 [proof] summary: counterexample trace [basecase]: proof/engine_0/trace.vcd
-SBY 21:08:37 [proof] summary:   failed assertion top.$assert$top.v:9$6 at top.v:9.25-10.28 in step 1
-SBY 21:08:37 [proof] DONE (FAIL, rc=2)
+SBY 12:23:20 [proof] Removing directory '/mnt/c/Users/ptar1/Documents/FYP Verilog/proof'.
+SBY 12:23:20 [proof] Copy '/mnt/c/Users/ptar1/Documents/FYP Verilog/syn_identity.v' to '/mnt/c/Users/ptar1/Documents/FYP Verilog/proof/src/syn_identity.v'.
+SBY 12:23:20 [proof] Copy '/mnt/c/Users/ptar1/Documents/FYP Verilog/syn_yosys.v' to '/mnt/c/Users/ptar1/Documents/FYP Verilog/proof/src/syn_yosys.v'.
+SBY 12:23:20 [proof] Copy '/mnt/c/Users/ptar1/Documents/FYP Verilog/top.v' to '/mnt/c/Users/ptar1/Documents/FYP Verilog/proof/src/top.v'.
+SBY 12:23:21 [proof] engine_0: smtbmc
+SBY 12:23:21 [proof] base: starting process "cd proof/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY 12:23:21 [proof] base: finished (returncode=0)
+SBY 12:23:21 [proof] prep: starting process "cd proof/model; yosys -ql design_prep.log design_prep.ys"
+SBY 12:23:22 [proof] prep: finished (returncode=0)
+SBY 12:23:22 [proof] smt2: starting process "cd proof/model; yosys -ql design_smt2.log design_smt2.ys"
+SBY 12:23:22 [proof] smt2: finished (returncode=0)
+SBY 12:23:22 [proof] engine_0.basecase: starting process "cd proof; yosys-smtbmc --presat --unroll --noprogress -t 20  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2"
+SBY 12:23:22 [proof] engine_0.induction: starting process "cd proof; yosys-smtbmc --presat --unroll -i --noprogress -t 20  --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-yw engine_0/trace_induct.yw --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2"
+SBY 12:23:23 [proof] engine_0.induction: ##   0:00:00  Solver: yices
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Solver: yices
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assumptions in step 0..
+SBY 12:23:23 [proof] engine_0.induction: ##   0:00:00  Trying induction in step 20..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assertions in step 0..
+SBY 12:23:23 [proof] engine_0.induction: ##   0:00:00  Trying induction in step 19..
+SBY 12:23:23 [proof] engine_0.induction: ##   0:00:00  Temporal induction successful.
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assumptions in step 1..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assertions in step 1..
+SBY 12:23:23 [proof] engine_0.induction: ##   0:00:00  Status: passed
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assumptions in step 2..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assertions in step 2..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assumptions in step 3..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assertions in step 3..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assumptions in step 4..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assertions in step 4..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assumptions in step 5..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assertions in step 5..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assumptions in step 6..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assertions in step 6..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assumptions in step 7..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assertions in step 7..
+SBY 12:23:23 [proof] engine_0.induction: finished (returncode=0)
+SBY 12:23:23 [proof] engine_0.induction: Status returned by engine for induction: pass
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assumptions in step 8..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assertions in step 8..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assumptions in step 9..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assertions in step 9..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assumptions in step 10..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assertions in step 10..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assumptions in step 11..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assertions in step 11..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assumptions in step 12..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assertions in step 12..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assumptions in step 13..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assertions in step 13..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assumptions in step 14..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assertions in step 14..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assumptions in step 15..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assertions in step 15..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assumptions in step 16..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assertions in step 16..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assumptions in step 17..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assertions in step 17..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assumptions in step 18..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assertions in step 18..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assumptions in step 19..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Checking assertions in step 19..
+SBY 12:23:23 [proof] engine_0.basecase: ##   0:00:00  Status: passed
+SBY 12:23:23 [proof] engine_0.basecase: finished (returncode=0)
+SBY 12:23:23 [proof] engine_0.basecase: Status returned by engine for basecase: pass
+SBY 12:23:23 [proof] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:02 (2)
+SBY 12:23:23 [proof] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
+SBY 12:23:23 [proof] summary: engine_0 (smtbmc) returned pass for basecase
+SBY 12:23:23 [proof] summary: engine_0 (smtbmc) returned pass for induction
+SBY 12:23:23 [proof] summary: engine_0 did not produce any traces
+SBY 12:23:23 [proof] summary: successful proof by k-induction.
+SBY 12:23:23 [proof] DONE (PASS, rc=0)
