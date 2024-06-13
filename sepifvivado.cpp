@@ -2,8 +2,8 @@
 #include <fstream>
 #include <string>
 
-// Function to check if the first line of a file is "//vivado"
-bool checkFirstLine(const std::string &fileName) {
+// Function to check if the first line of a file contains "//vivado"
+bool checkFirstLineContains(const std::string &fileName) {
     std::ifstream file(fileName);
     if (!file.is_open()) {
         std::cerr << "Error: could not open file '" << fileName << "'" << std::endl;
@@ -14,12 +14,12 @@ bool checkFirstLine(const std::string &fileName) {
     std::getline(file, firstLine);
     file.close();
 
-    return firstLine == "//vivado";
+    return firstLine.find("//vivado") != std::string::npos;
 }
 
 int main() {
-    bool goodbranchValid = checkFirstLine("goodbranch.v");
-    bool badbranchValid = checkFirstLine("badbranch.v");
+    bool goodbranchValid = checkFirstLineContains("goodbranch.v");
+    bool badbranchValid = checkFirstLineContains("badbranch.v");
 
     if (goodbranchValid && badbranchValid) {
         std::ifstream inputFile("bug_eval_skel.v");
@@ -59,7 +59,7 @@ int main() {
 
         std::cout << "Processing completed. Check 'bug_eval_modified.v' for the output." << std::endl;
     } else {
-        std::cout << "The first line of either goodbranch.v or badbranch.v is not '//vivado'. No changes were made." << std::endl;
+        std::cout << "The first line of either goodbranch.v or badbranch.v does not contain '//vivado'. No changes were made." << std::endl;
     }
 
     return 0;
