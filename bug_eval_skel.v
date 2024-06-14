@@ -25,7 +25,7 @@ module bug_eval (
     assign in_shiftandmult = 3'b100;
     //assign w0_viv1 = 1'b0;
     assign y_viv1 = 1;
-    assign w_msb = 1;
+    assign w_msb = 0;
 
     assign a_num1 = 1;
     assign a_num2 = 2;

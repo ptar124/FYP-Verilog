@@ -69,7 +69,7 @@ module bug_eval(clk, rst, a_num1, a_num2, a_out, b_num1, b_num2, b_out, result);
   wire y1;
   wire y_msb;
   wire y_viv1;
-  assign _0_ = ~(y_msb & y1);
+  assign _0_ = y_msb | ~(y1);
   assign result[0] = _0_ ? b_out[0] : a_out[0];
   assign result[1] = _0_ ? b_out[1] : a_out[1];
   assign result[2] = _0_ ? b_out[2] : a_out[2];
@@ -86,7 +86,7 @@ module bug_eval(clk, rst, a_num1, a_num2, a_out, b_num1, b_num2, b_out, result);
   );
   topmsb_1 eval_topmsb_1 (
     .clk(clk),
-    .w(1'h1),
+    .w(1'h0),
     .y(y_msb)
   );
   goodbranch goodbranch_instance (
@@ -99,7 +99,7 @@ module bug_eval(clk, rst, a_num1, a_num2, a_out, b_num1, b_num2, b_out, result);
   assign b_num1 = 4'h4;
   assign b_num2 = 4'h8;
   assign in_shiftandmult = 3'h4;
-  assign w_msb = 1'h1;
+  assign w_msb = 1'h0;
   assign y_viv1 = 1'h1;
 endmodule
 
