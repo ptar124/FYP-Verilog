@@ -22,21 +22,21 @@ module badbranch(num1, num2, out);
   wire [3:0] num2;
   output [4:0] out;
   wire [4:0] out;
-  assign out[0] = num2[0] ^ num1[0];
-  assign _00_ = num2[1] ^ num1[1];
-  assign _01_ = ~(num2[0] & num1[0]);
+  assign out[0] = num1[0] ^ num2[0];
+  assign _00_ = num1[1] ^ num2[1];
+  assign _01_ = ~(num1[0] & num2[0]);
   assign out[1] = ~(_01_ ^ _00_);
-  assign _02_ = ~(num2[2] ^ num1[2]);
-  assign _03_ = ~(num2[1] & num1[1]);
+  assign _02_ = ~(num1[2] ^ num2[2]);
+  assign _03_ = ~(num1[1] & num2[1]);
   assign _04_ = _00_ & ~(_01_);
   assign _05_ = _04_ | ~(_03_);
   assign out[2] = ~(_05_ ^ _02_);
-  assign _06_ = ~(num2[3] ^ num1[3]);
-  assign _07_ = ~(num2[2] & num1[2]);
+  assign _06_ = ~(num1[3] ^ num2[3]);
+  assign _07_ = ~(num1[2] & num2[2]);
   assign _08_ = _05_ & ~(_02_);
   assign _09_ = _07_ & ~(_08_);
   assign out[3] = _09_ ^ _06_;
-  assign _10_ = num2[3] & num1[3];
+  assign _10_ = num1[3] & num2[3];
   assign _11_ = ~(_07_ | _06_);
   assign _12_ = _11_ | _10_;
   assign _13_ = _06_ | _02_;
@@ -44,7 +44,8 @@ module badbranch(num1, num2, out);
   assign out[4] = _14_ | _12_;
 endmodule
 
-module bug_eval(a_num1, a_num2, a_out, b_num1, b_num2, b_out, result);
+module bug_eval(clk, rst, a_num1, a_num2, a_out, b_num1, b_num2, b_out, result);
+  wire _0_;
   input [3:0] a_num1;
   wire [3:0] a_num1;
   input [3:0] a_num2;
@@ -57,31 +58,48 @@ module bug_eval(a_num1, a_num2, a_out, b_num1, b_num2, b_out, result);
   wire [3:0] b_num2;
   input [4:0] b_out;
   wire [4:0] b_out;
+  input clk;
+  wire clk;
   wire [2:0] in_shiftandmult;
   output [4:0] result;
   wire [4:0] result;
+  input rst;
+  wire rst;
+  wire w_msb;
   wire y1;
+  wire y_msb;
   wire y_viv1;
-  assign result[0] = y1 ? a_out[0] : b_out[0];
-  assign result[1] = y1 ? a_out[1] : b_out[1];
-  assign result[2] = y1 ? a_out[2] : b_out[2];
-  assign result[3] = y1 ? a_out[3] : b_out[3];
-  assign result[4] = y1 ? a_out[4] : b_out[4];
+  assign _0_ = ~(y_msb & y1);
+  assign result[0] = _0_ ? b_out[0] : a_out[0];
+  assign result[1] = _0_ ? b_out[1] : a_out[1];
+  assign result[2] = _0_ ? b_out[2] : a_out[2];
+  assign result[3] = _0_ ? b_out[3] : a_out[3];
+  assign result[4] = _0_ ? b_out[4] : a_out[4];
   badbranch badbranch_instance (
-    .num1(b_num1),
-    .num2(b_num2),
+    .num1(4'h4),
+    .num2(4'h8),
     .out(b_out)
   );
   top_1 eval_top_1 (
     .w(3'h4),
     .y(y1)
   );
+  topmsb_1 eval_topmsb_1 (
+    .clk(clk),
+    .w(1'h1),
+    .y(y_msb)
+  );
   goodbranch goodbranch_instance (
-    .num1(a_num1),
-    .num2(a_num2),
+    .num1(4'h1),
+    .num2(4'h2),
     .out(a_out)
   );
+  assign a_num1 = 4'h1;
+  assign a_num2 = 4'h2;
+  assign b_num1 = 4'h4;
+  assign b_num2 = 4'h8;
   assign in_shiftandmult = 3'h4;
+  assign w_msb = 1'h1;
   assign y_viv1 = 1'h1;
 endmodule
 
@@ -107,21 +125,21 @@ module goodbranch(num1, num2, out);
   wire [3:0] num2;
   output [4:0] out;
   wire [4:0] out;
-  assign _00_ = num2[1] ^ num1[1];
-  assign _01_ = ~(num2[0] & num1[0]);
+  assign _00_ = num1[1] ^ num2[1];
+  assign _01_ = ~(num1[0] & num2[0]);
   assign out[1] = ~(_01_ ^ _00_);
-  assign _02_ = ~(num2[2] ^ num1[2]);
-  assign _03_ = ~(num2[1] & num1[1]);
+  assign _02_ = ~(num1[2] ^ num2[2]);
+  assign _03_ = ~(num1[1] & num2[1]);
   assign _04_ = _00_ & ~(_01_);
   assign _05_ = _04_ | ~(_03_);
   assign out[2] = ~(_05_ ^ _02_);
-  assign _06_ = ~(num2[3] ^ num1[3]);
-  assign _07_ = ~(num2[2] & num1[2]);
+  assign _06_ = ~(num1[3] ^ num2[3]);
+  assign _07_ = ~(num1[2] & num2[2]);
   assign _08_ = _05_ & ~(_02_);
   assign _09_ = _07_ & ~(_08_);
   assign out[3] = _09_ ^ _06_;
-  assign out[0] = num2[0] ^ num1[0];
-  assign _10_ = num2[3] & num1[3];
+  assign out[0] = num1[0] ^ num2[0];
+  assign _10_ = num1[3] & num2[3];
   assign _11_ = ~(_07_ | _06_);
   assign _12_ = _11_ | _10_;
   assign _13_ = _06_ | _02_;
@@ -135,4 +153,15 @@ module top_1(y, w);
   output y;
   wire y;
   assign y = ~(w[0] | w[1]);
+endmodule
+
+module topmsb_1(y, clk, w);
+  input clk;
+  wire clk;
+  input w;
+  wire w;
+  output y;
+  reg y = 1'h0;
+  always @(posedge clk)
+    y <= w;
 endmodule

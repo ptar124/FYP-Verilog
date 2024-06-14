@@ -99,9 +99,9 @@ Creating decoders for process `\top.$proc$top.v:8$2'.
 
 4.3.9. Executing PROC_DFF pass (convert process syncs to FFs).
 Creating register for signal `\top.$formal$top.v:9$1_CHECK' using process `\top.$proc$top.v:8$2'.
-  created $dff cell `$procdff$13' with positive edge clock.
+  created $dff cell `$procdff$15' with positive edge clock.
 Creating register for signal `\top.$formal$top.v:9$1_EN' using process `\top.$proc$top.v:8$2'.
-  created $dff cell `$procdff$14' with positive edge clock.
+  created $dff cell `$procdff$16' with positive edge clock.
 
 4.3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
 
@@ -126,7 +126,7 @@ Optimizing module top.
 Finding unused cells or wires in module \top_1..
 Finding unused cells or wires in module \top_2..
 Finding unused cells or wires in module \top..
-Removed 0 unused cells and 5 unused wires.
+Removed 0 unused cells and 6 unused wires.
 <suppressed ~3 debug messages>
 
 4.7. Executing CHECK pass (checking for obvious problems).
@@ -233,15 +233,16 @@ Finding unused cells or wires in module \top_2..
 
 === top_1 ===
 
-   Number of wires:                  3
-   Number of wire bits:              5
-   Number of public wires:           2
-   Number of public wire bits:       4
+   Number of wires:                  5
+   Number of wire bits:              7
+   Number of public wires:           3
+   Number of public wire bits:       5
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                  2
-     $not                            1
+   Number of cells:                  4
+     $and                            1
+     $not                            2
      $or                             1
 
 === top_2 ===
@@ -263,19 +264,20 @@ Finding unused cells or wires in module \top_2..
      top_1                           1
      top_2                           1
 
-   Number of wires:                 13
-   Number of wire bits:             21
-   Number of public wires:           8
-   Number of public wire bits:      14
+   Number of wires:                 15
+   Number of wire bits:             23
+   Number of public wires:           9
+   Number of public wire bits:      15
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                  8
+   Number of cells:                 10
+     $and                            1
      $assert                         1
      $dff                            2
      $eq                             1
      $mul                            1
-     $not                            1
+     $not                            2
      $or                             1
      $shr                            1
 
@@ -304,6 +306,6 @@ Module top directly or indirectly contains formal properties -> setting "keep" a
 7. Executing RTLIL backend.
 Output filename: ../model/design.il
 
-End of script. Logfile hash: d666ef0826, CPU: user 0.01s system 0.01s, MEM: 12.12 MB peak
+End of script. Logfile hash: c5aaddd83c, CPU: user 0.01s system 0.02s, MEM: 12.09 MB peak
 Yosys 0.36+3 (git sha1 a53032104, clang 10.0.0-4ubuntu1 -fPIC -Os)
 Time spent: 25% 5x opt_expr (0 sec), 14% 4x opt_clean (0 sec), ...

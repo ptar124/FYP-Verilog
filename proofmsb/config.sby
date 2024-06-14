@@ -7,9 +7,9 @@ smtbmc
 
 [script]
 read -formal syn_wrongmsb.v
-read -formal wrongmsb.v
+read -formal wrongmsb_identity.v
 read -formal topmsb.v
-prep -topmsb topmsb
+prep -top topmsb
 
 [files]
 syn_wrongmsb.v

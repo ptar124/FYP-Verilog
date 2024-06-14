@@ -30,16 +30,16 @@ Input filename: design_prep.il
 2. Executing HIERARCHY pass (managing design hierarchy).
 
 2.1. Analyzing design hierarchy..
-Top module:  \top
-Used module:     \top_2
-Used module:     \top_1
+Top module:  \topmsb
+Used module:     \topmsb_2
+Used module:     \topmsb_1
 
 2.2. Analyzing design hierarchy..
-Top module:  \top
-Used module:     \top_2
-Used module:     \top_1
+Top module:  \topmsb
+Used module:     \topmsb_2
+Used module:     \topmsb_1
 Removed 0 unused modules.
-Module top directly or indirectly contains formal properties -> setting "keep" attribute.
+Module topmsb directly or indirectly contains formal properties -> setting "keep" attribute.
 
 3. Executing FORMALFF pass.
 
@@ -47,34 +47,35 @@ Module top directly or indirectly contains formal properties -> setting "keep" a
 
 5. Printing statistics.
 
-=== top_2 ===
+=== topmsb_2 ===
 
-   Number of wires:                  3
-   Number of wire bits:              7
-   Number of public wires:           2
-   Number of public wire bits:       4
-   Number of memories:               0
-   Number of memory bits:            0
-   Number of processes:              0
-   Number of cells:                  2
-     $mul                            1
-     $shr                            1
-
-=== top_1 ===
-
-   Number of wires:                  5
+   Number of wires:                  7
    Number of wire bits:              7
    Number of public wires:           3
-   Number of public wire bits:       5
+   Number of public wire bits:       3
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                  4
-     $and                            1
-     $not                            2
-     $or                             1
+   Number of cells:                  5
+     $eqx                            1
+     $ff                             3
+     $mux                            1
 
-=== top ===
+=== topmsb_1 ===
+
+   Number of wires:                  7
+   Number of wire bits:              7
+   Number of public wires:           3
+   Number of public wire bits:       3
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  5
+     $eqx                            1
+     $ff                             3
+     $mux                            1
+
+=== topmsb ===
 
    Number of wires:                 14
    Number of wire bits:             16
@@ -90,44 +91,39 @@ Module top directly or indirectly contains formal properties -> setting "keep" a
      $eqx                            1
      $ff                             4
      $mux                            2
-     top_1                           1
-     top_2                           1
+     topmsb_1                        1
+     topmsb_2                        1
 
 === design hierarchy ===
 
-   top                               1
-     top_1                           1
-     top_2                           1
+   topmsb                            1
+     topmsb_1                        1
+     topmsb_2                        1
 
-   Number of wires:                 22
+   Number of wires:                 28
    Number of wire bits:             30
-   Number of public wires:          10
-   Number of public wire bits:      16
+   Number of public wires:          11
+   Number of public wire bits:      13
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                 16
-     $and                            1
+   Number of cells:                 20
      $anyinit                        1
      $assert                         1
      $eq                             1
-     $eqx                            1
-     $ff                             4
-     $mul                            1
-     $mux                            2
-     $not                            2
-     $or                             1
-     $shr                            1
+     $eqx                            3
+     $ff                            10
+     $mux                            4
 
 6. Executing SMT2 backend.
 
 6.1. Executing BMUXMAP pass.
 
 6.2. Executing DEMUXMAP pass.
-Creating SMT-LIBv2 representation of module top_1.
-Creating SMT-LIBv2 representation of module top_2.
-Creating SMT-LIBv2 representation of module top.
+Creating SMT-LIBv2 representation of module topmsb_1.
+Creating SMT-LIBv2 representation of module topmsb_2.
+Creating SMT-LIBv2 representation of module topmsb.
 
-End of script. Logfile hash: e8a4bb2a9b, CPU: user 0.00s system 0.02s, MEM: 11.36 MB peak
+End of script. Logfile hash: 56b43a0b91, CPU: user 0.00s system 0.02s, MEM: 11.54 MB peak
 Yosys 0.36+3 (git sha1 a53032104, clang 10.0.0-4ubuntu1 -fPIC -Os)
-Time spent: 50% 2x write_smt2 (0 sec), 12% 2x read_ilang (0 sec), ...
+Time spent: 53% 2x write_smt2 (0 sec), 11% 1x formalff (0 sec), ...

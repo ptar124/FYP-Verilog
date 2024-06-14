@@ -1,8 +1,8 @@
 # running in proofmsb/src/
 read -formal syn_wrongmsb.v
-read -formal wrongmsb.v
+read -formal wrongmsb_identity.v
 read -formal topmsb.v
-prep -topmsb topmsb
+prep -top topmsb
 
 hierarchy -smtcheck
 write_jny -no-connections ../model/design.json

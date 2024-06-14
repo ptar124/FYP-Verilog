@@ -28,9 +28,9 @@
 Input filename: design.il
 
 2. Executing SCC pass (detecting logic loops).
-Found 0 SCCs in module top_2.
-Found 0 SCCs in module top_1.
-Found 0 SCCs in module top.
+Found 0 SCCs in module topmsb_2.
+Found 0 SCCs in module topmsb_1.
+Found 0 SCCs in module topmsb.
 Found 0 SCCs.
 
 3. Executing SIMPLEMAP pass (map simple cells to gate primitives).
@@ -38,27 +38,29 @@ Found 0 SCCs.
 4. Executing MEMORY_NORDFF pass (extracting $dff cells from memories).
 
 5. Executing CLK2FFLOGIC pass (convert clocked FFs to generic $ff cells).
-Replacing top.$procdff$16 ($dff): CLK=\clk, D=1'1, Q=$formal$top.v:9$1_EN
-Replacing top.$procdff$15 ($dff): CLK=\clk, D=$0$formal$top.v:9$1_CHECK[0:0]$3, Q=$formal$top.v:9$1_CHECK
+Replacing topmsb_2.$procdff$17 ($dff): CLK=\clk, D=\w, Q=\y
+Replacing topmsb_1.$procdff$16 ($dff): CLK=\clk, D=\w, Q=\y
+Replacing topmsb.$procdff$20 ($dff): CLK=\clk, D=1'1, Q=$formal$topmsb.v:9$2_EN
+Replacing topmsb.$procdff$19 ($dff): CLK=\clk, D=$0$formal$topmsb.v:9$2_CHECK[0:0]$4, Q=$formal$topmsb.v:9$2_CHECK
 
 6. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \top_2..
-Finding unused cells or wires in module \top_1..
-Finding unused cells or wires in module \top..
-Removed 0 unused cells and 2 unused wires.
-<suppressed ~1 debug messages>
+Finding unused cells or wires in module \topmsb_2..
+Finding unused cells or wires in module \topmsb_1..
+Finding unused cells or wires in module \topmsb..
+Removed 0 unused cells and 4 unused wires.
+<suppressed ~3 debug messages>
 
 7. Executing FORMALFF pass.
 
 8. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \top..
-Finding unused cells or wires in module \top_1..
-Finding unused cells or wires in module \top_2..
+Finding unused cells or wires in module \topmsb..
+Finding unused cells or wires in module \topmsb_1..
+Finding unused cells or wires in module \topmsb_2..
 
 9. Executing CHECK pass (checking for obvious problems).
-Checking module top...
-Checking module top_1...
-Checking module top_2...
+Checking module topmsb...
+Checking module topmsb_1...
+Checking module topmsb_2...
 Found and reported 0 problems.
 
 10. Executing SETUNDEF pass (replace undef values with defined constants).
@@ -66,37 +68,36 @@ Found and reported 0 problems.
 11. Executing OPT pass (performing simple optimizations).
 
 11.1. Executing OPT_EXPR pass (perform const folding).
-Optimizing module top.
-Optimizing module top_1.
-Optimizing module top_2.
-<suppressed ~1 debug messages>
+Optimizing module topmsb.
+Optimizing module topmsb_1.
+Optimizing module topmsb_2.
 
 11.2. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\top'.
+Finding identical cells in module `\topmsb'.
 <suppressed ~6 debug messages>
-Finding identical cells in module `\top_1'.
-Finding identical cells in module `\top_2'.
+Finding identical cells in module `\topmsb_1'.
+Finding identical cells in module `\topmsb_2'.
 Removed a total of 2 cells.
 
 11.3. Executing OPT_DFF pass (perform DFF optimizations).
 
 11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \top..
-Finding unused cells or wires in module \top_1..
-Finding unused cells or wires in module \top_2..
+Finding unused cells or wires in module \topmsb..
+Finding unused cells or wires in module \topmsb_1..
+Finding unused cells or wires in module \topmsb_2..
 Removed 0 unused cells and 2 unused wires.
 <suppressed ~1 debug messages>
 
 11.5. Finished fast OPT passes.
 
 12. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \top..
-Finding unused cells or wires in module \top_1..
-Finding unused cells or wires in module \top_2..
+Finding unused cells or wires in module \topmsb..
+Finding unused cells or wires in module \topmsb_1..
+Finding unused cells or wires in module \topmsb_2..
 
 13. Executing RTLIL backend.
 Output filename: ../model/design_prep.il
 
-End of script. Logfile hash: 333f933079, CPU: user 0.03s system 0.00s, MEM: 11.35 MB peak
+End of script. Logfile hash: d5128d9b81, CPU: user 0.01s system 0.02s, MEM: 11.54 MB peak
 Yosys 0.36+3 (git sha1 a53032104, clang 10.0.0-4ubuntu1 -fPIC -Os)
-Time spent: 23% 4x opt_clean (0 sec), 11% 1x opt_expr (0 sec), ...
+Time spent: 25% 4x opt_clean (0 sec), 10% 1x opt_expr (0 sec), ...

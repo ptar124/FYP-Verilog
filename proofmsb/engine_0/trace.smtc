@@ -1,0 +1,24 @@
+initial
+assume (= [$auto$clk2fflogic.cc:74:sample_control_edge$/clk#sampled$45] true)
+assume (= [$auto$clk2fflogic.cc:88:sample_data$$0$formal$topmsb.v:9$2_CHECK[0:0]$4#sampled$53] false)
+assume (= [$auto$clk2fflogic.cc:88:sample_data$$formal$topmsb.v:9$2_CHECK#sampled$51] false)
+assume (= [$auto$clk2fflogic.cc:88:sample_data$$formal$topmsb.v:9$2_EN#sampled$41] false)
+assume (= [$auto$clk2fflogic.cc:88:sample_data$1'1#sampled$43] false)
+assume (= [topmsb_1.$auto$clk2fflogic.cc:74:sample_control_edge$/clk#sampled$35] true)
+assume (= [topmsb_1.$auto$clk2fflogic.cc:88:sample_data$/w#sampled$33] false)
+assume (= [topmsb_1.$auto$clk2fflogic.cc:88:sample_data$/y#sampled$31] false)
+assume (= [topmsb_2.$auto$clk2fflogic.cc:74:sample_control_edge$/clk#sampled$25] true)
+assume (= [topmsb_2.$auto$clk2fflogic.cc:88:sample_data$/w#sampled$23] false)
+assume (= [topmsb_2.$auto$clk2fflogic.cc:88:sample_data$/y#sampled$21] false)
+
+state 0
+assume (= [clk] false)
+assume (= [w] #b001)
+
+state 1
+assume (= [clk] false)
+assume (= [w] #b000)
+
+state 2
+assume (= [clk] true)
+assume (= [w] #b000)

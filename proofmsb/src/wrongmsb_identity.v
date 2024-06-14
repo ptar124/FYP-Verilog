@@ -1,4 +1,4 @@
-module top (y, clk, w);
+module topmsb_2 (y, clk, w);
    output reg y = 1'b0;
    input clk, w;
    reg [1:0] i = 2'b00;
