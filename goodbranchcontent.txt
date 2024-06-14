@@ -1,3 +1,8 @@
 
 
-    assign out = num1 + num2;
+    initial begin
+        out = 5'b00000;
+    end
+    always @(*) begin
+        out = num1 + num2;
+    end

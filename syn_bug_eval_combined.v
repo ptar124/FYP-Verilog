@@ -158,10 +158,12 @@ endmodule
 module topmsb_1(y, clk, w);
   input clk;
   wire clk;
+  wire [1:0] i;
   input w;
   wire w;
   output y;
   reg y = 1'h0;
   always @(posedge clk)
-    y <= w;
+    y <= 1'h1;
+  assign i = 2'h0;
 endmodule

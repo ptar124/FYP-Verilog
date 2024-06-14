@@ -1,3 +1,4 @@
 input wire [3:0] b_num1,
 input wire [3:0] b_num2,
-output reg [4:0] b_out
+input  wire [4:0] b_out,
+output wire [4:0] result

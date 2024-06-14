@@ -7,8 +7,14 @@
 module bug_eval (
     input wire clk,
     input wire rst,
-    //goodbranchdec ,
-    //badbranchdec
+    input wire [3:0] a_num1,
+input wire [3:0] a_num2,
+input  wire [4:0] a_out ,
+    input wire [3:0] b_num1,
+input wire [3:0] b_num2,
+input  wire [4:0] b_out,
+output reg [4:0] result
+
 );
 
     wire y1, y2;
@@ -18,11 +24,11 @@ module bug_eval (
     wire y_msb;
     wire w_msb;
     
-    
+    /*
     initial begin
         result = 5'b00000;
     end
-    
+    */
 
     top_1 eval_top_1 (.y(y1), .w(in_shiftandmult));
     //top_vivado eval_top_vivado (.y(y_viv1), .w0(w0_viv1));
@@ -39,11 +45,15 @@ module bug_eval (
     assign b_num2 = 8;
 
     goodbranch goodbranch_instance (
-        //goodbranchinst
+        a_num1,
+a_num2,
+a_out
 
     );
     badbranch badbranch_instance (
-        //badbranchinst
+        b_num1,
+b_num2,
+b_out
         
     );
 

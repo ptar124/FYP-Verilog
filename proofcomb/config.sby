@@ -1,0 +1,20 @@
+[options]
+multiclock on
+mode prove
+
+[engines]
+smtbmc
+
+[script]
+
+read_verilog -formal bug_eval_combined.v
+read_verilog -formal proofcombgood.v
+prep -top proofcombgood
+
+[files]
+proofcombgood.v
+bug_eval_combined.v
+goodbranch.v
+badbranch.v
+syn_yosys.v
+syn_wrongmsb.v

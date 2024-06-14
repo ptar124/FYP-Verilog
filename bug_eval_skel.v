@@ -17,6 +17,12 @@ module bug_eval (
     wire w0_viv1;
     wire y_msb;
     wire w_msb;
+    
+    
+    initial begin
+        result = 5'b00000;
+    end
+    
 
     top_1 eval_top_1 (.y(y1), .w(in_shiftandmult));
     //top_vivado eval_top_vivado (.y(y_viv1), .w0(w0_viv1));

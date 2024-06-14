@@ -19,7 +19,7 @@ int getOutputSize(const std::string& fileName) {
     }
 
     std::string line;
-    const std::string outPrefix = "output wire ";
+    const std::string outPrefix = "output reg ";
     while (std::getline(file, line)) {
         std::string trimmedLine = trimLeadingWhitespace(line);
         if (trimmedLine.find(outPrefix) == 0 && trimmedLine.find(" out;") != std::string::npos) {
@@ -61,6 +61,12 @@ void processFile(const std::string& inputFileName, const std::string& outputFile
 
         if (trimmedLine.find("output ") == 0) {
             line.replace(line.find("output "), 6, "input ");
+        }
+        
+        size_t pos = 0;
+        while ((pos = line.find("reg", pos)) != std::string::npos) {
+            line.replace(pos, 3, "wire");
+            pos += 4; // Move past the replaced "wire"
         }
 
         lines.push_back(line);

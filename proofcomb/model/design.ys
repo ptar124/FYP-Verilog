@@ -1,0 +1,9 @@
+# running in proofcomb/src/
+
+read_verilog -formal bug_eval_combined.v
+read_verilog -formal proofcombgood.v
+prep -top proofcombgood
+
+hierarchy -smtcheck
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il
