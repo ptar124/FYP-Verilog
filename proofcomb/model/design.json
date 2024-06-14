@@ -29,9 +29,9 @@
             ],
             "cells": [
                 {
-                  "name": "$add$badbranch.v:7$6",
+                  "name": "$add$badbranch.v:11$9",
                   "attributes": {
-                    "src": "badbranch.v:7.18-7.29"
+                    "src": "badbranch.v:11.15-11.26"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -45,7 +45,7 @@
           }
         ],
         "attributes": {
-            "src": "badbranch.v:2.1-8.10"
+            "src": "badbranch.v:2.1-13.10"
         }
       },
       {
@@ -134,7 +134,7 @@
                   "name": "goodbranch_instance",
                   "attributes": {
                     "module_not_derived": "00000000000000000000000000000001",
-                    "src": "bug_eval_combined.v:47.16-52.6"
+                    "src": "bug_eval_combined.v:49.16-54.6"
                   },
                   "parameters": {
 
@@ -166,7 +166,7 @@
                   "name": "badbranch_instance",
                   "attributes": {
                     "module_not_derived": "00000000000000000000000000000001",
-                    "src": "bug_eval_combined.v:53.15-58.6"
+                    "src": "bug_eval_combined.v:55.15-60.6"
                   },
                   "parameters": {
 
@@ -200,10 +200,10 @@
             ],
             "cells": [
                 {
-                  "name": "$procmux$38",
+                  "name": "$procmux$49",
                   "attributes": {
                     "full_case": "00000000000000000000000000000001",
-                    "src": "bug_eval_combined.v:61.13-61.53|bug_eval_combined.v:61.9-68.12"
+                    "src": "bug_eval_combined.v:63.13-63.53|bug_eval_combined.v:63.9-70.12"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000101"
@@ -232,9 +232,9 @@
             ],
             "cells": [
                 {
-                  "name": "$logic_and$bug_eval_combined.v:61$12",
+                  "name": "$logic_and$bug_eval_combined.v:63$16",
                   "attributes": {
-                    "src": "bug_eval_combined.v:61.13-61.53"
+                    "src": "bug_eval_combined.v:63.13-63.53"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -262,9 +262,9 @@
             ],
             "cells": [
                 {
-                  "name": "$eq$bug_eval_combined.v:61$11",
+                  "name": "$eq$bug_eval_combined.v:63$15",
                   "attributes": {
-                    "src": "bug_eval_combined.v:61.39-61.53"
+                    "src": "bug_eval_combined.v:63.39-63.53"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -276,7 +276,7 @@
           }
         ],
         "attributes": {
-            "src": "bug_eval_combined.v:7.1-70.10"
+            "src": "bug_eval_combined.v:7.1-72.10"
         }
       },
       {
@@ -303,9 +303,9 @@
             ],
             "cells": [
                 {
-                  "name": "$add$goodbranch.v:9$5",
+                  "name": "$add$goodbranch.v:11$6",
                   "attributes": {
-                    "src": "goodbranch.v:9.18-9.29"
+                    "src": "goodbranch.v:11.15-11.26"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -319,7 +319,7 @@
           }
         ],
         "attributes": {
-            "src": "goodbranch.v:2.1-10.10"
+            "src": "goodbranch.v:2.1-13.10"
         }
       },
       {
@@ -349,7 +349,7 @@
                   "name": "goodbranch",
                   "attributes": {
                     "module_not_derived": "00000000000000000000000000000001",
-                    "src": "proofcombgood.v:13.16-13.64"
+                    "src": "proofcombgood.v:15.16-15.64"
                   },
                   "parameters": {
 
@@ -391,7 +391,7 @@
                   "name": "bug_eval",
                   "attributes": {
                     "module_not_derived": "00000000000000000000000000000001",
-                    "src": "proofcombgood.v:12.14-12.96"
+                    "src": "proofcombgood.v:14.14-14.96"
                   },
                   "parameters": {
 
@@ -425,38 +425,38 @@
             ],
             "cells": [
                 {
-                  "name": "$procmux$24",
+                  "name": "$procmux$35",
                   "attributes": {
-                    "src": "proofcombgood.v:23.17-23.49|proofcombgood.v:23.13-25.16"
+                    "src": "proofcombgood.v:26.13-28.53|proofcombgood.v:25.13-31.16"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procmux$27",
+                  "name": "$procmux$38",
                   "attributes": {
                     "full_case": "00000000000000000000000000000001",
-                    "src": "proofcombgood.v:20.13-20.24|proofcombgood.v:20.9-26.12"
+                    "src": "proofcombgood.v:22.13-22.24|proofcombgood.v:22.9-32.12"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procmux$29",
+                  "name": "$procmux$40",
                   "attributes": {
-                    "src": "proofcombgood.v:23.17-23.49|proofcombgood.v:23.13-25.16"
+                    "src": "proofcombgood.v:26.13-28.53|proofcombgood.v:25.13-31.16"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
                   }
                 },
                 {
-                  "name": "$procmux$32",
+                  "name": "$procmux$43",
                   "attributes": {
                     "full_case": "00000000000000000000000000000001",
-                    "src": "proofcombgood.v:20.13-20.24|proofcombgood.v:20.9-26.12"
+                    "src": "proofcombgood.v:22.13-22.24|proofcombgood.v:22.9-32.12"
                   },
                   "parameters": {
                     "WIDTH": "00000000000000000000000000000001"
@@ -490,9 +490,9 @@
             ],
             "cells": [
                 {
-                  "name": "$procdff$40",
+                  "name": "$procdff$51",
                   "attributes": {
-                    "src": "proofcombgood.v:15.5-28.6"
+                    "src": "proofcombgood.v:17.5-34.6"
                   },
                   "parameters": {
                     "ARST_POLARITY": "1",
@@ -502,9 +502,9 @@
                   }
                 },
                 {
-                  "name": "$procdff$41",
+                  "name": "$procdff$52",
                   "attributes": {
-                    "src": "proofcombgood.v:15.5-28.6"
+                    "src": "proofcombgood.v:17.5-34.6"
                   },
                   "parameters": {
                     "ARST_POLARITY": "1",
@@ -514,9 +514,9 @@
                   }
                 },
                 {
-                  "name": "$procdff$42",
+                  "name": "$procdff$53",
                   "attributes": {
-                    "src": "proofcombgood.v:15.5-28.6"
+                    "src": "proofcombgood.v:17.5-34.6"
                   },
                   "parameters": {
                     "ARST_POLARITY": "1",
@@ -548,9 +548,48 @@
             ],
             "cells": [
                 {
-                  "name": "$logic_and$proofcombgood.v:23$19",
+                  "name": "$logic_and$proofcombgood.v:26$24",
                   "attributes": {
-                    "src": "proofcombgood.v:23.17-23.49"
+                    "src": "proofcombgood.v:26.13-27.27"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$proofcombgood.v:26$26",
+                  "attributes": {
+                    "src": "proofcombgood.v:26.13-28.20"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$proofcombgood.v:26$28",
+                  "attributes": {
+                    "src": "proofcombgood.v:26.13-28.35"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$logic_and$proofcombgood.v:26$30",
+                  "attributes": {
+                    "src": "proofcombgood.v:26.13-28.53"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -583,9 +622,9 @@
             ],
             "cells": [
                 {
-                  "name": "$eq$proofcombgood.v:23$17",
+                  "name": "$eq$proofcombgood.v:26$22",
                   "attributes": {
-                    "src": "proofcombgood.v:23.17-23.31"
+                    "src": "proofcombgood.v:26.13-26.27"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -596,9 +635,9 @@
                   }
                 },
                 {
-                  "name": "$eq$proofcombgood.v:23$18",
+                  "name": "$eq$proofcombgood.v:27$23",
                   "attributes": {
-                    "src": "proofcombgood.v:23.35-23.49"
+                    "src": "proofcombgood.v:27.13-27.27"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -609,9 +648,22 @@
                   }
                 },
                 {
-                  "name": "$eq$proofcombgood.v:24$20",
+                  "name": "$eq$proofcombgood.v:28$29",
                   "attributes": {
-                    "src": "proofcombgood.v:24.24-24.37"
+                    "src": "proofcombgood.v:28.39-28.53"
+                  },
+                  "parameters": {
+                    "A_SIGNED": "00000000000000000000000000000000",
+                    "A_WIDTH": "00000000000000000000000000000001",
+                    "B_SIGNED": "00000000000000000000000000000000",
+                    "B_WIDTH": "00000000000000000000000000000001",
+                    "Y_WIDTH": "00000000000000000000000000000001"
+                  }
+                },
+                {
+                  "name": "$eq$proofcombgood.v:30$31",
+                  "attributes": {
+                    "src": "proofcombgood.v:30.24-30.37"
                   },
                   "parameters": {
                     "A_SIGNED": "00000000000000000000000000000000",
@@ -639,9 +691,9 @@
             ],
             "cells": [
                 {
-                  "name": "$assert$proofcombgood.v:23$21",
+                  "name": "$assert$proofcombgood.v:29$32",
                   "attributes": {
-                    "src": "proofcombgood.v:23.56-24.38"
+                    "src": "proofcombgood.v:29.20-30.38"
                   },
                   "parameters": {
 
@@ -653,7 +705,7 @@
         "attributes": {
             "keep": "00000000000000000000000000000001",
             "top": "00000000000000000000000000000001",
-            "src": "proofcombgood.v:1.1-29.10"
+            "src": "proofcombgood.v:1.1-35.10"
         }
       },
       {
@@ -751,7 +803,7 @@
             ],
             "cells": [
                 {
-                  "name": "$procdff$43",
+                  "name": "$procdff$54",
                   "attributes": {
                     "src": "syn_wrongmsb.v:10.3-11.12"
                   },

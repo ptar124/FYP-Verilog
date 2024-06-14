@@ -21,7 +21,7 @@
 ##   0:00:00  Trying induction in step 1..
 ##   0:00:00  Trying induction in step 0..
 ##   0:00:00  Temporal induction failed!
-##   0:00:00  Assert failed in proofcombgood: proofcombgood.v:23.56-24.38 ($assert$proofcombgood.v:23$21)
+##   0:00:00  Assert failed in proofcombgood: proofcombgood.v:29.20-30.38 ($assert$proofcombgood.v:29$32)
 ##   0:00:00  Writing trace to VCD file: engine_0/trace_induct.vcd
 ##   0:00:00  Writing trace to Verilog testbench: engine_0/trace_induct_tb.v
 ##   0:00:00  Writing trace to constraints file: engine_0/trace_induct.smtc

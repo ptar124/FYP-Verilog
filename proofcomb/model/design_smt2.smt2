@@ -66,14 +66,14 @@
 ; yosys-smt2-module topmsb_1
 (declare-sort |topmsb_1_s| 0)
 (declare-fun |topmsb_1_is| (|topmsb_1_s|) Bool)
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:88:sample_data$\\y#sampled$44"], "smtname": 0, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |topmsb_1#0| (|topmsb_1_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:88:sample_data$\y#sampled$44
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:88:sample_data$\\w#sampled$46"], "smtname": 1, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |topmsb_1#1| (|topmsb_1_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:88:sample_data$\w#sampled$46
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:74:sample_control_edge$\\clk#sampled$48"], "smtname": 2, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |topmsb_1#2| (|topmsb_1_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:74:sample_control_edge$\clk#sampled$48
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:88:sample_data$\\y#sampled$55"], "smtname": 0, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |topmsb_1#0| (|topmsb_1_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:88:sample_data$\y#sampled$55
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:88:sample_data$\\w#sampled$57"], "smtname": 1, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |topmsb_1#1| (|topmsb_1_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:88:sample_data$\w#sampled$57
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:74:sample_control_edge$\\clk#sampled$59"], "smtname": 2, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |topmsb_1#2| (|topmsb_1_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:74:sample_control_edge$\clk#sampled$59
 (declare-fun |topmsb_1#3| (|topmsb_1_s|) (_ BitVec 1)) ; \clk
-(define-fun |topmsb_1#4| ((state |topmsb_1_s|)) Bool (= (concat (|topmsb_1#2| state) (|topmsb_1#3| state)) #b01)) ; $auto$rtlil.cc:2501:Eqx$51
+(define-fun |topmsb_1#4| ((state |topmsb_1_s|)) Bool (= (concat (|topmsb_1#2| state) (|topmsb_1#3| state)) #b01)) ; $auto$rtlil.cc:2501:Eqx$62
 (define-fun |topmsb_1#5| ((state |topmsb_1_s|)) (_ BitVec 1) (ite (|topmsb_1#4| state) (|topmsb_1#1| state) (|topmsb_1#0| state))) ; \y
 ; yosys-smt2-output y 1
 ; yosys-smt2-wire y 1
@@ -87,24 +87,24 @@
 ; yosys-smt2-wire clk 1
 ; yosys-smt2-witness {"offset": 0, "path": ["\\clk"], "smtname": "clk", "smtoffset": 0, "type": "input", "width": 1}
 (define-fun |topmsb_1_n clk| ((state |topmsb_1_s|)) Bool (= ((_ extract 0 0) (|topmsb_1#3| state)) #b1))
-; yosys-smt2-register $auto$clk2fflogic.cc:88:sample_data$/y#sampled$44 1
-(define-fun |topmsb_1_n $auto$clk2fflogic.cc:88:sample_data$/y#sampled$44| ((state |topmsb_1_s|)) Bool (= ((_ extract 0 0) (|topmsb_1#0| state)) #b1))
-; yosys-smt2-register $auto$clk2fflogic.cc:88:sample_data$/w#sampled$46 1
-(define-fun |topmsb_1_n $auto$clk2fflogic.cc:88:sample_data$/w#sampled$46| ((state |topmsb_1_s|)) Bool (= ((_ extract 0 0) (|topmsb_1#1| state)) #b1))
-; yosys-smt2-register $auto$clk2fflogic.cc:74:sample_control_edge$/clk#sampled$48 1
-(define-fun |topmsb_1_n $auto$clk2fflogic.cc:74:sample_control_edge$/clk#sampled$48| ((state |topmsb_1_s|)) Bool (= ((_ extract 0 0) (|topmsb_1#2| state)) #b1))
+; yosys-smt2-register $auto$clk2fflogic.cc:88:sample_data$/y#sampled$55 1
+(define-fun |topmsb_1_n $auto$clk2fflogic.cc:88:sample_data$/y#sampled$55| ((state |topmsb_1_s|)) Bool (= ((_ extract 0 0) (|topmsb_1#0| state)) #b1))
+; yosys-smt2-register $auto$clk2fflogic.cc:88:sample_data$/w#sampled$57 1
+(define-fun |topmsb_1_n $auto$clk2fflogic.cc:88:sample_data$/w#sampled$57| ((state |topmsb_1_s|)) Bool (= ((_ extract 0 0) (|topmsb_1#1| state)) #b1))
+; yosys-smt2-register $auto$clk2fflogic.cc:74:sample_control_edge$/clk#sampled$59 1
+(define-fun |topmsb_1_n $auto$clk2fflogic.cc:74:sample_control_edge$/clk#sampled$59| ((state |topmsb_1_s|)) Bool (= ((_ extract 0 0) (|topmsb_1#2| state)) #b1))
 (define-fun |topmsb_1_a| ((state |topmsb_1_s|)) Bool true)
 (define-fun |topmsb_1_u| ((state |topmsb_1_s|)) Bool true)
 (define-fun |topmsb_1_i| ((state |topmsb_1_s|)) Bool (and
-  (= (= ((_ extract 0 0) (|topmsb_1#0| state)) #b1) false) ; $auto$clk2fflogic.cc:88:sample_data$/y#sampled$44
-  (= (= ((_ extract 0 0) (|topmsb_1#1| state)) #b1) false) ; $auto$clk2fflogic.cc:88:sample_data$/w#sampled$46
-  (= (= ((_ extract 0 0) (|topmsb_1#2| state)) #b1) true) ; $auto$clk2fflogic.cc:74:sample_control_edge$/clk#sampled$48
+  (= (= ((_ extract 0 0) (|topmsb_1#0| state)) #b1) false) ; $auto$clk2fflogic.cc:88:sample_data$/y#sampled$55
+  (= (= ((_ extract 0 0) (|topmsb_1#1| state)) #b1) false) ; $auto$clk2fflogic.cc:88:sample_data$/w#sampled$57
+  (= (= ((_ extract 0 0) (|topmsb_1#2| state)) #b1) true) ; $auto$clk2fflogic.cc:74:sample_control_edge$/clk#sampled$59
 ))
 (define-fun |topmsb_1_h| ((state |topmsb_1_s|)) Bool true)
 (define-fun |topmsb_1_t| ((state |topmsb_1_s|) (next_state |topmsb_1_s|)) Bool (and
-  (= (|topmsb_1#3| state) (|topmsb_1#2| next_state)) ; $auto$clk2fflogic.cc:79:sample_control_edge$49 $auto$clk2fflogic.cc:74:sample_control_edge$\clk#sampled$48
-  (= (ite (|topmsb_1#6| state) #b1 #b0) (|topmsb_1#1| next_state)) ; $auto$clk2fflogic.cc:95:sample_data$47 $auto$clk2fflogic.cc:88:sample_data$\w#sampled$46
-  (= (|topmsb_1#5| state) (|topmsb_1#0| next_state)) ; $auto$clk2fflogic.cc:95:sample_data$45 $auto$clk2fflogic.cc:88:sample_data$\y#sampled$44
+  (= (|topmsb_1#3| state) (|topmsb_1#2| next_state)) ; $auto$clk2fflogic.cc:79:sample_control_edge$60 $auto$clk2fflogic.cc:74:sample_control_edge$\clk#sampled$59
+  (= (ite (|topmsb_1#6| state) #b1 #b0) (|topmsb_1#1| next_state)) ; $auto$clk2fflogic.cc:95:sample_data$58 $auto$clk2fflogic.cc:88:sample_data$\w#sampled$57
+  (= (|topmsb_1#5| state) (|topmsb_1#0| next_state)) ; $auto$clk2fflogic.cc:95:sample_data$56 $auto$clk2fflogic.cc:88:sample_data$\y#sampled$55
 )) ; end of module topmsb_1
 ; yosys-smt2-module bug_eval
 (declare-sort |bug_eval_s| 0)
@@ -138,8 +138,8 @@
 ; yosys-smt2-witness {"path": ["\\goodbranch_instance"], "smtname": "goodbranch_instance", "type": "cell"}
 (declare-fun |bug_eval#4| (|bug_eval_s|) (_ BitVec 5)) ; \a_out
 (declare-fun |bug_eval_h goodbranch_instance| (|bug_eval_s|) |goodbranch_s|)
-(define-fun |bug_eval#5| ((state |bug_eval_s|)) (_ BitVec 1) (bvnot (ite (|bug_eval#0| state) #b1 #b0))) ; $eq$bug_eval_combined.v:61$11_Y
-(define-fun |bug_eval#6| ((state |bug_eval_s|)) Bool (and (or  (|bug_eval#1| state) false) (or  (= ((_ extract 0 0) (|bug_eval#5| state)) #b1) false))) ; $logic_and$bug_eval_combined.v:61$12_Y
+(define-fun |bug_eval#5| ((state |bug_eval_s|)) (_ BitVec 1) (bvnot (ite (|bug_eval#0| state) #b1 #b0))) ; $eq$bug_eval_combined.v:63$15_Y
+(define-fun |bug_eval#6| ((state |bug_eval_s|)) Bool (and (or  (|bug_eval#1| state) false) (or  (= ((_ extract 0 0) (|bug_eval#5| state)) #b1) false))) ; $logic_and$bug_eval_combined.v:63$16_Y
 (define-fun |bug_eval#7| ((state |bug_eval_s|)) (_ BitVec 5) (ite (|bug_eval#6| state) (|bug_eval#4| state) (|bug_eval#3| state))) ; \result
 ; yosys-smt2-output result 5
 ; yosys-smt2-wire result 5
@@ -155,26 +155,30 @@
 ; yosys-smt2-wire b_out 5
 ; yosys-smt2-witness {"offset": 0, "path": ["\\b_out"], "smtname": "b_out", "smtoffset": 0, "type": "input", "width": 5}
 (define-fun |bug_eval_n b_out| ((state |bug_eval_s|)) (_ BitVec 5) (|bug_eval#3| state))
+(declare-fun |bug_eval#9| (|bug_eval_s|) (_ BitVec 4)) ; \b_num2
 ; yosys-smt2-input b_num2 4
 ; yosys-smt2-wire b_num2 4
 ; yosys-smt2-witness {"offset": 0, "path": ["\\b_num2"], "smtname": "b_num2", "smtoffset": 0, "type": "input", "width": 4}
-(define-fun |bug_eval_n b_num2| ((state |bug_eval_s|)) (_ BitVec 4) #b1000)
+(define-fun |bug_eval_n b_num2| ((state |bug_eval_s|)) (_ BitVec 4) (|bug_eval#9| state))
+(declare-fun |bug_eval#10| (|bug_eval_s|) (_ BitVec 4)) ; \b_num1
 ; yosys-smt2-input b_num1 4
 ; yosys-smt2-wire b_num1 4
 ; yosys-smt2-witness {"offset": 0, "path": ["\\b_num1"], "smtname": "b_num1", "smtoffset": 0, "type": "input", "width": 4}
-(define-fun |bug_eval_n b_num1| ((state |bug_eval_s|)) (_ BitVec 4) #b0100)
+(define-fun |bug_eval_n b_num1| ((state |bug_eval_s|)) (_ BitVec 4) (|bug_eval#10| state))
 ; yosys-smt2-input a_out 5
 ; yosys-smt2-wire a_out 5
 ; yosys-smt2-witness {"offset": 0, "path": ["\\a_out"], "smtname": "a_out", "smtoffset": 0, "type": "input", "width": 5}
 (define-fun |bug_eval_n a_out| ((state |bug_eval_s|)) (_ BitVec 5) (|bug_eval#4| state))
+(declare-fun |bug_eval#11| (|bug_eval_s|) (_ BitVec 4)) ; \a_num2
 ; yosys-smt2-input a_num2 4
 ; yosys-smt2-wire a_num2 4
 ; yosys-smt2-witness {"offset": 0, "path": ["\\a_num2"], "smtname": "a_num2", "smtoffset": 0, "type": "input", "width": 4}
-(define-fun |bug_eval_n a_num2| ((state |bug_eval_s|)) (_ BitVec 4) #b0010)
+(define-fun |bug_eval_n a_num2| ((state |bug_eval_s|)) (_ BitVec 4) (|bug_eval#11| state))
+(declare-fun |bug_eval#12| (|bug_eval_s|) (_ BitVec 4)) ; \a_num1
 ; yosys-smt2-input a_num1 4
 ; yosys-smt2-wire a_num1 4
 ; yosys-smt2-witness {"offset": 0, "path": ["\\a_num1"], "smtname": "a_num1", "smtoffset": 0, "type": "input", "width": 4}
-(define-fun |bug_eval_n a_num1| ((state |bug_eval_s|)) (_ BitVec 4) #b0001)
+(define-fun |bug_eval_n a_num1| ((state |bug_eval_s|)) (_ BitVec 4) (|bug_eval#12| state))
 (define-fun |bug_eval_a| ((state |bug_eval_s|)) Bool (and
   (|badbranch_a| (|bug_eval_h badbranch_instance| state))
   (|top_1_a| (|bug_eval_h eval_top_1| state))
@@ -196,8 +200,8 @@
 (define-fun |bug_eval_h| ((state |bug_eval_s|)) Bool (and
   (= (|bug_eval_is| state) (|badbranch_is| (|bug_eval_h badbranch_instance| state)))
   (= (|bug_eval#3| state) (|badbranch_n out| (|bug_eval_h badbranch_instance| state))) ; badbranch.out
-  (= #b1000 (|badbranch_n num2| (|bug_eval_h badbranch_instance| state))) ; badbranch.num2
-  (= #b0100 (|badbranch_n num1| (|bug_eval_h badbranch_instance| state))) ; badbranch.num1
+  (= (|bug_eval#9| state) (|badbranch_n num2| (|bug_eval_h badbranch_instance| state))) ; badbranch.num2
+  (= (|bug_eval#10| state) (|badbranch_n num1| (|bug_eval_h badbranch_instance| state))) ; badbranch.num1
   (= (|bug_eval_is| state) (|top_1_is| (|bug_eval_h eval_top_1| state)))
   (= (|bug_eval#1| state) (|top_1_n y| (|bug_eval_h eval_top_1| state))) ; top_1.y
   (= #b100 (|top_1_n w| (|bug_eval_h eval_top_1| state))) ; top_1.w
@@ -207,8 +211,8 @@
   (= (|bug_eval#8| state) (|topmsb_1_n clk| (|bug_eval_h eval_topmsb_1| state))) ; topmsb_1.clk
   (= (|bug_eval_is| state) (|goodbranch_is| (|bug_eval_h goodbranch_instance| state)))
   (= (|bug_eval#4| state) (|goodbranch_n out| (|bug_eval_h goodbranch_instance| state))) ; goodbranch.out
-  (= #b0010 (|goodbranch_n num2| (|bug_eval_h goodbranch_instance| state))) ; goodbranch.num2
-  (= #b0001 (|goodbranch_n num1| (|bug_eval_h goodbranch_instance| state))) ; goodbranch.num1
+  (= (|bug_eval#11| state) (|goodbranch_n num2| (|bug_eval_h goodbranch_instance| state))) ; goodbranch.num2
+  (= (|bug_eval#12| state) (|goodbranch_n num1| (|bug_eval_h goodbranch_instance| state))) ; goodbranch.num1
   (|badbranch_h| (|bug_eval_h badbranch_instance| state))
   (|top_1_h| (|bug_eval_h eval_top_1| state))
   (|topmsb_1_h| (|bug_eval_h eval_topmsb_1| state))
@@ -223,128 +227,152 @@
 ; yosys-smt2-module proofcombgood
 (declare-sort |proofcombgood_s| 0)
 (declare-fun |proofcombgood_is| (|proofcombgood_s|) Bool)
-(declare-fun |proofcombgood#0| (|proofcombgood_s|) Bool) ; \rst
+(declare-fun |proofcombgood#0| (|proofcombgood_s|) Bool) ; \y_viv1
+; yosys-smt2-input y_viv1 1
+; yosys-smt2-wire y_viv1 1
+; yosys-smt2-witness {"offset": 0, "path": ["\\y_viv1"], "smtname": "y_viv1", "smtoffset": 0, "type": "input", "width": 1}
+(define-fun |proofcombgood_n y_viv1| ((state |proofcombgood_s|)) Bool (|proofcombgood#0| state))
+(declare-fun |proofcombgood#1| (|proofcombgood_s|) Bool) ; \y_msb
+; yosys-smt2-input y_msb 1
+; yosys-smt2-wire y_msb 1
+; yosys-smt2-witness {"offset": 0, "path": ["\\y_msb"], "smtname": "y_msb", "smtoffset": 0, "type": "input", "width": 1}
+(define-fun |proofcombgood_n y_msb| ((state |proofcombgood_s|)) Bool (|proofcombgood#1| state))
+(declare-fun |proofcombgood#2| (|proofcombgood_s|) Bool) ; \y1
+; yosys-smt2-input y1 1
+; yosys-smt2-wire y1 1
+; yosys-smt2-witness {"offset": 0, "path": ["\\y1"], "smtname": "y1", "smtoffset": 0, "type": "input", "width": 1}
+(define-fun |proofcombgood_n y1| ((state |proofcombgood_s|)) Bool (|proofcombgood#2| state))
+(declare-fun |proofcombgood#3| (|proofcombgood_s|) Bool) ; \w_msb
+; yosys-smt2-input w_msb 1
+; yosys-smt2-wire w_msb 1
+; yosys-smt2-witness {"offset": 0, "path": ["\\w_msb"], "smtname": "w_msb", "smtoffset": 0, "type": "input", "width": 1}
+(define-fun |proofcombgood_n w_msb| ((state |proofcombgood_s|)) Bool (|proofcombgood#3| state))
+(declare-fun |proofcombgood#4| (|proofcombgood_s|) Bool) ; \rst
 ; yosys-smt2-input rst 1
 ; yosys-smt2-wire rst 1
 ; yosys-smt2-witness {"offset": 0, "path": ["\\rst"], "smtname": "rst", "smtoffset": 0, "type": "input", "width": 1}
-(define-fun |proofcombgood_n rst| ((state |proofcombgood_s|)) Bool (|proofcombgood#0| state))
+(define-fun |proofcombgood_n rst| ((state |proofcombgood_s|)) Bool (|proofcombgood#4| state))
 ; yosys-smt2-cell bug_eval bug_eval
 ; yosys-smt2-witness {"path": ["\\bug_eval"], "smtname": "bug_eval", "type": "cell"}
-(declare-fun |proofcombgood#1| (|proofcombgood_s|) (_ BitVec 5)) ; \result
+(declare-fun |proofcombgood#5| (|proofcombgood_s|) (_ BitVec 5)) ; \result
 (declare-fun |proofcombgood_h bug_eval| (|proofcombgood_s|) |bug_eval_s|)
 ; yosys-smt2-output result 5
 ; yosys-smt2-wire result 5
-(define-fun |proofcombgood_n result| ((state |proofcombgood_s|)) (_ BitVec 5) (|proofcombgood#1| state))
+(define-fun |proofcombgood_n result| ((state |proofcombgood_s|)) (_ BitVec 5) (|proofcombgood#5| state))
 ; yosys-smt2-cell goodbranch goodbranch
 ; yosys-smt2-witness {"path": ["\\goodbranch"], "smtname": "goodbranch", "type": "cell"}
-(declare-fun |proofcombgood#2| (|proofcombgood_s|) (_ BitVec 5)) ; \out
+(declare-fun |proofcombgood#6| (|proofcombgood_s|) (_ BitVec 5)) ; \out
 (declare-fun |proofcombgood_h goodbranch| (|proofcombgood_s|) |goodbranch_s|)
 ; yosys-smt2-output out 5
 ; yosys-smt2-wire out 5
-(define-fun |proofcombgood_n out| ((state |proofcombgood_s|)) (_ BitVec 5) (|proofcombgood#2| state))
-(declare-fun |proofcombgood#3| (|proofcombgood_s|) (_ BitVec 4)) ; \num2
+(define-fun |proofcombgood_n out| ((state |proofcombgood_s|)) (_ BitVec 5) (|proofcombgood#6| state))
+(declare-fun |proofcombgood#7| (|proofcombgood_s|) (_ BitVec 4)) ; \num2
 ; yosys-smt2-input num2 4
 ; yosys-smt2-wire num2 4
 ; yosys-smt2-witness {"offset": 0, "path": ["\\num2"], "smtname": "num2", "smtoffset": 0, "type": "input", "width": 4}
-(define-fun |proofcombgood_n num2| ((state |proofcombgood_s|)) (_ BitVec 4) (|proofcombgood#3| state))
-(declare-fun |proofcombgood#4| (|proofcombgood_s|) (_ BitVec 4)) ; \num1
+(define-fun |proofcombgood_n num2| ((state |proofcombgood_s|)) (_ BitVec 4) (|proofcombgood#7| state))
+(declare-fun |proofcombgood#8| (|proofcombgood_s|) (_ BitVec 4)) ; \num1
 ; yosys-smt2-input num1 4
 ; yosys-smt2-wire num1 4
 ; yosys-smt2-witness {"offset": 0, "path": ["\\num1"], "smtname": "num1", "smtoffset": 0, "type": "input", "width": 4}
-(define-fun |proofcombgood_n num1| ((state |proofcombgood_s|)) (_ BitVec 4) (|proofcombgood#4| state))
-; yosys-smt2-anyinit proofcombgood#5 1 $auto$clk2fflogic.cc:95:sample_data$87
-; yosys-smt2-witness {"offset": 0, "path": ["\\first_cycle"], "smtname": 5, "smtoffset": 0, "type": "init", "width": 1}
-(declare-fun |proofcombgood#5| (|proofcombgood_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:88:sample_data$\first_cycle#sampled$86
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:74:sample_control_edge$\\clk#sampled$58"], "smtname": 6, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |proofcombgood#6| (|proofcombgood_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:74:sample_control_edge$\clk#sampled$58
-(declare-fun |proofcombgood#7| (|proofcombgood_s|) (_ BitVec 1)) ; \clk
-(define-fun |proofcombgood#8| ((state |proofcombgood_s|)) Bool (= (concat (|proofcombgood#6| state) (|proofcombgood#7| state)) #b01)) ; $auto$rtlil.cc:2501:Eqx$61
-(define-fun |proofcombgood#9| ((state |proofcombgood_s|)) (_ BitVec 1) (ite (|proofcombgood#8| state) #b0 (|proofcombgood#5| state))) ; $auto$rtlil.cc:2558:Mux$95
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:62:sample_control$\\rst#sampled$64"], "smtname": 10, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |proofcombgood#10| (|proofcombgood_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:62:sample_control$\rst#sampled$64
-(define-fun |proofcombgood#11| ((state |proofcombgood_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|proofcombgood#10| state)) #b1) #b1 (|proofcombgood#9| state))) ; $auto$rtlil.cc:2558:Mux$99
-(define-fun |proofcombgood#12| ((state |proofcombgood_s|)) (_ BitVec 1) (ite (|proofcombgood#0| state) #b1 (|proofcombgood#11| state))) ; \first_cycle
+(define-fun |proofcombgood_n num1| ((state |proofcombgood_s|)) (_ BitVec 4) (|proofcombgood#8| state))
+; yosys-smt2-anyinit proofcombgood#9 1 $auto$clk2fflogic.cc:95:sample_data$98
+; yosys-smt2-witness {"offset": 0, "path": ["\\first_cycle"], "smtname": 9, "smtoffset": 0, "type": "init", "width": 1}
+(declare-fun |proofcombgood#9| (|proofcombgood_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:88:sample_data$\first_cycle#sampled$97
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:74:sample_control_edge$\\clk#sampled$101"], "smtname": 10, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |proofcombgood#10| (|proofcombgood_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:74:sample_control_edge$\clk#sampled$101
+(declare-fun |proofcombgood#11| (|proofcombgood_s|) (_ BitVec 1)) ; \clk
+(define-fun |proofcombgood#12| ((state |proofcombgood_s|)) Bool (= (concat (|proofcombgood#10| state) (|proofcombgood#11| state)) #b01)) ; $auto$rtlil.cc:2501:Eqx$104
+(define-fun |proofcombgood#13| ((state |proofcombgood_s|)) (_ BitVec 1) (ite (|proofcombgood#12| state) #b0 (|proofcombgood#9| state))) ; $auto$rtlil.cc:2558:Mux$106
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:62:sample_control$\\rst#sampled$107"], "smtname": 14, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |proofcombgood#14| (|proofcombgood_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:62:sample_control$\rst#sampled$107
+(define-fun |proofcombgood#15| ((state |proofcombgood_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|proofcombgood#14| state)) #b1) #b1 (|proofcombgood#13| state))) ; $auto$rtlil.cc:2558:Mux$110
+(define-fun |proofcombgood#16| ((state |proofcombgood_s|)) (_ BitVec 1) (ite (|proofcombgood#4| state) #b1 (|proofcombgood#15| state))) ; \first_cycle
 ; yosys-smt2-wire first_cycle 1
-(define-fun |proofcombgood_n first_cycle| ((state |proofcombgood_s|)) Bool (= ((_ extract 0 0) (|proofcombgood#12| state)) #b1))
+(define-fun |proofcombgood_n first_cycle| ((state |proofcombgood_s|)) Bool (= ((_ extract 0 0) (|proofcombgood#16| state)) #b1))
 ; yosys-smt2-input clk 1
 ; yosys-smt2-wire clk 1
 ; yosys-smt2-witness {"offset": 0, "path": ["\\clk"], "smtname": "clk", "smtoffset": 0, "type": "input", "width": 1}
-(define-fun |proofcombgood_n clk| ((state |proofcombgood_s|)) Bool (= ((_ extract 0 0) (|proofcombgood#7| state)) #b1))
-(declare-fun |proofcombgood#13| (|proofcombgood_s|) (_ BitVec 4)) ; \a_num2
+(define-fun |proofcombgood_n clk| ((state |proofcombgood_s|)) Bool (= ((_ extract 0 0) (|proofcombgood#11| state)) #b1))
+(declare-fun |proofcombgood#17| (|proofcombgood_s|) (_ BitVec 4)) ; \a_num2
 ; yosys-smt2-input a_num2 4
 ; yosys-smt2-wire a_num2 4
 ; yosys-smt2-witness {"offset": 0, "path": ["\\a_num2"], "smtname": "a_num2", "smtoffset": 0, "type": "input", "width": 4}
-(define-fun |proofcombgood_n a_num2| ((state |proofcombgood_s|)) (_ BitVec 4) (|proofcombgood#13| state))
-(declare-fun |proofcombgood#14| (|proofcombgood_s|) (_ BitVec 4)) ; \a_num1
+(define-fun |proofcombgood_n a_num2| ((state |proofcombgood_s|)) (_ BitVec 4) (|proofcombgood#17| state))
+(declare-fun |proofcombgood#18| (|proofcombgood_s|) (_ BitVec 4)) ; \a_num1
 ; yosys-smt2-input a_num1 4
 ; yosys-smt2-wire a_num1 4
 ; yosys-smt2-witness {"offset": 0, "path": ["\\a_num1"], "smtname": "a_num1", "smtoffset": 0, "type": "input", "width": 4}
-(define-fun |proofcombgood_n a_num1| ((state |proofcombgood_s|)) (_ BitVec 4) (|proofcombgood#14| state))
-; yosys-smt2-anyseq proofcombgood#15 1 $auto$setundef.cc:533:execute$108
-; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyseq_auto_setundef_cc_533_execute_108"], "smtname": 15, "smtoffset": 0, "type": "seq", "width": 1}
-(declare-fun |proofcombgood#15| (|proofcombgood_s|) (_ BitVec 1)) ; \_witness_.anyseq_auto_setundef_cc_533_execute_108
-; yosys-smt2-wire _witness_.anyseq_auto_setundef_cc_533_execute_108 1
-(define-fun |proofcombgood_n _witness_.anyseq_auto_setundef_cc_533_execute_108| ((state |proofcombgood_s|)) Bool (= ((_ extract 0 0) (|proofcombgood#15| state)) #b1))
-; yosys-smt2-anyseq proofcombgood#16 1 $auto$setundef.cc:533:execute$106
-; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyseq_auto_setundef_cc_533_execute_106"], "smtname": 16, "smtoffset": 0, "type": "seq", "width": 1}
-(declare-fun |proofcombgood#16| (|proofcombgood_s|) (_ BitVec 1)) ; \_witness_.anyseq_auto_setundef_cc_533_execute_106
-; yosys-smt2-wire _witness_.anyseq_auto_setundef_cc_533_execute_106 1
-(define-fun |proofcombgood_n _witness_.anyseq_auto_setundef_cc_533_execute_106| ((state |proofcombgood_s|)) Bool (= ((_ extract 0 0) (|proofcombgood#16| state)) #b1))
-; yosys-smt2-anyseq proofcombgood#17 1 $auto$setundef.cc:533:execute$104
-; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyseq_auto_setundef_cc_533_execute_104"], "smtname": 17, "smtoffset": 0, "type": "seq", "width": 1}
-(declare-fun |proofcombgood#17| (|proofcombgood_s|) (_ BitVec 1)) ; \_witness_.anyseq_auto_setundef_cc_533_execute_104
-; yosys-smt2-wire _witness_.anyseq_auto_setundef_cc_533_execute_104 1
-(define-fun |proofcombgood_n _witness_.anyseq_auto_setundef_cc_533_execute_104| ((state |proofcombgood_s|)) Bool (= ((_ extract 0 0) (|proofcombgood#17| state)) #b1))
-; yosys-smt2-anyseq proofcombgood#18 1 $auto$setundef.cc:533:execute$102
-; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyseq_auto_setundef_cc_533_execute_102"], "smtname": 18, "smtoffset": 0, "type": "seq", "width": 1}
-(declare-fun |proofcombgood#18| (|proofcombgood_s|) (_ BitVec 1)) ; \_witness_.anyseq_auto_setundef_cc_533_execute_102
-; yosys-smt2-wire _witness_.anyseq_auto_setundef_cc_533_execute_102 1
-(define-fun |proofcombgood_n _witness_.anyseq_auto_setundef_cc_533_execute_102| ((state |proofcombgood_s|)) Bool (= ((_ extract 0 0) (|proofcombgood#18| state)) #b1))
-; yosys-smt2-anyinit proofcombgood#19 1 $auto$clk2fflogic.cc:95:sample_data$71
-; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_auto_clk2fflogic_cc_95_sample_data_71"], "smtname": 19, "smtoffset": 0, "type": "init", "width": 1}
-(declare-fun |proofcombgood#19| (|proofcombgood_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:88:sample_data$$formal$proofcombgood.v:23$13_CHECK#sampled$70
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:88:sample_data$$0$formal$proofcombgood.v:23$13_CHECK[0:0]$15#sampled$72"], "smtname": 20, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |proofcombgood#20| (|proofcombgood_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:88:sample_data$$0$formal$proofcombgood.v:23$13_CHECK[0:0]$15#sampled$72
-(define-fun |proofcombgood#21| ((state |proofcombgood_s|)) (_ BitVec 1) (ite (|proofcombgood#8| state) (|proofcombgood#20| state) (|proofcombgood#19| state))) ; $auto$rtlil.cc:2558:Mux$79
-(define-fun |proofcombgood#22| ((state |proofcombgood_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|proofcombgood#10| state)) #b1) (|proofcombgood#18| state) (|proofcombgood#21| state))) ; $auto$rtlil.cc:2558:Mux$83
-(define-fun |proofcombgood#23| ((state |proofcombgood_s|)) (_ BitVec 1) (ite (|proofcombgood#0| state) (|proofcombgood#17| state) (|proofcombgood#22| state))) ; \_witness_.anyinit_auto_clk2fflogic_cc_95_sample_data_71
-; yosys-smt2-wire _witness_.anyinit_auto_clk2fflogic_cc_95_sample_data_71 1
-(define-fun |proofcombgood_n _witness_.anyinit_auto_clk2fflogic_cc_95_sample_data_71| ((state |proofcombgood_s|)) Bool (= ((_ extract 0 0) (|proofcombgood#23| state)) #b1))
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:88:sample_data$$formal$proofcombgood.v:23$13_EN#sampled$54"], "smtname": 24, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |proofcombgood#24| (|proofcombgood_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:88:sample_data$$formal$proofcombgood.v:23$13_EN#sampled$54
-; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:88:sample_data$$0$formal$proofcombgood.v:23$13_EN[0:0]$16#sampled$56"], "smtname": 25, "smtoffset": 0, "type": "reg", "width": 1}
-(declare-fun |proofcombgood#25| (|proofcombgood_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:88:sample_data$$0$formal$proofcombgood.v:23$13_EN[0:0]$16#sampled$56
-(define-fun |proofcombgood#26| ((state |proofcombgood_s|)) (_ BitVec 1) (ite (|proofcombgood#8| state) (|proofcombgood#25| state) (|proofcombgood#24| state))) ; $auto$rtlil.cc:2558:Mux$63
-(define-fun |proofcombgood#27| ((state |proofcombgood_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|proofcombgood#10| state)) #b1) #b0 (|proofcombgood#26| state))) ; $auto$rtlil.cc:2558:Mux$67
-(define-fun |proofcombgood#28| ((state |proofcombgood_s|)) (_ BitVec 1) (ite (|proofcombgood#0| state) #b0 (|proofcombgood#27| state))) ; $formal$proofcombgood.v:23$13_EN
-; yosys-smt2-wire $formal$proofcombgood.v:23$13_EN 1
-(define-fun |proofcombgood_n $formal$proofcombgood.v:23$13_EN| ((state |proofcombgood_s|)) Bool (= ((_ extract 0 0) (|proofcombgood#28| state)) #b1))
-; yosys-smt2-wire $formal$proofcombgood.v:23$13_CHECK 1
-(define-fun |proofcombgood_n $formal$proofcombgood.v:23$13_CHECK| ((state |proofcombgood_s|)) Bool (= ((_ extract 0 0) (|proofcombgood#23| state)) #b1))
-; yosys-smt2-register $auto$clk2fflogic.cc:88:sample_data$/first_cycle#sampled$86 1
-(define-fun |proofcombgood_n $auto$clk2fflogic.cc:88:sample_data$/first_cycle#sampled$86| ((state |proofcombgood_s|)) Bool (= ((_ extract 0 0) (|proofcombgood#5| state)) #b1))
-; yosys-smt2-register $auto$clk2fflogic.cc:88:sample_data$$formal$proofcombgood.v:23$13_EN#sampled$54 1
-(define-fun |proofcombgood_n $auto$clk2fflogic.cc:88:sample_data$$formal$proofcombgood.v:23$13_EN#sampled$54| ((state |proofcombgood_s|)) Bool (= ((_ extract 0 0) (|proofcombgood#24| state)) #b1))
-; yosys-smt2-register $auto$clk2fflogic.cc:88:sample_data$$formal$proofcombgood.v:23$13_CHECK#sampled$70 1
-(define-fun |proofcombgood_n $auto$clk2fflogic.cc:88:sample_data$$formal$proofcombgood.v:23$13_CHECK#sampled$70| ((state |proofcombgood_s|)) Bool (= ((_ extract 0 0) (|proofcombgood#19| state)) #b1))
-; yosys-smt2-register $auto$clk2fflogic.cc:88:sample_data$$0$formal$proofcombgood.v:23$13_EN[0:0]$16#sampled$56 1
-(define-fun |proofcombgood_n $auto$clk2fflogic.cc:88:sample_data$$0$formal$proofcombgood.v:23$13_EN[0:0]$16#sampled$56| ((state |proofcombgood_s|)) Bool (= ((_ extract 0 0) (|proofcombgood#25| state)) #b1))
-; yosys-smt2-register $auto$clk2fflogic.cc:88:sample_data$$0$formal$proofcombgood.v:23$13_CHECK[0:0]$15#sampled$72 1
-(define-fun |proofcombgood_n $auto$clk2fflogic.cc:88:sample_data$$0$formal$proofcombgood.v:23$13_CHECK[0:0]$15#sampled$72| ((state |proofcombgood_s|)) Bool (= ((_ extract 0 0) (|proofcombgood#20| state)) #b1))
-; yosys-smt2-register $auto$clk2fflogic.cc:74:sample_control_edge$/clk#sampled$58 1
-(define-fun |proofcombgood_n $auto$clk2fflogic.cc:74:sample_control_edge$/clk#sampled$58| ((state |proofcombgood_s|)) Bool (= ((_ extract 0 0) (|proofcombgood#6| state)) #b1))
-; yosys-smt2-register $auto$clk2fflogic.cc:62:sample_control$/rst#sampled$64 1
-(define-fun |proofcombgood_n $auto$clk2fflogic.cc:62:sample_control$/rst#sampled$64| ((state |proofcombgood_s|)) Bool (= ((_ extract 0 0) (|proofcombgood#10| state)) #b1))
-; yosys-smt2-assert 0 $assert$proofcombgood.v:23$21 proofcombgood.v:23.56-24.38
-(define-fun |proofcombgood_a 0| ((state |proofcombgood_s|)) Bool (or (= ((_ extract 0 0) (|proofcombgood#23| state)) #b1) (not (= ((_ extract 0 0) (|proofcombgood#28| state)) #b1)))) ; $assert$proofcombgood.v:23$21
-(define-fun |proofcombgood#29| ((state |proofcombgood_s|)) Bool (= (|proofcombgood#4| state) (|proofcombgood#14| state))) ; $eq$proofcombgood.v:23$17_Y
-(define-fun |proofcombgood#30| ((state |proofcombgood_s|)) Bool (= (|proofcombgood#3| state) (|proofcombgood#13| state))) ; $eq$proofcombgood.v:23$18_Y
-(define-fun |proofcombgood#31| ((state |proofcombgood_s|)) Bool (and (or  (|proofcombgood#29| state) false) (or  (|proofcombgood#30| state) false))) ; $logic_and$proofcombgood.v:23$19_Y
-(define-fun |proofcombgood#32| ((state |proofcombgood_s|)) (_ BitVec 1) (ite (|proofcombgood#31| state) #b1 #b0)) ; $procmux$24_Y
-(define-fun |proofcombgood#33| ((state |proofcombgood_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|proofcombgood#12| state)) #b1) #b0 (|proofcombgood#32| state))) ; $0$formal$proofcombgood.v:23$13_EN[0:0]$16
-(define-fun |proofcombgood#34| ((state |proofcombgood_s|)) Bool (= (|proofcombgood#1| state) (|proofcombgood#2| state))) ; $eq$proofcombgood.v:24$20_Y
-(define-fun |proofcombgood#35| ((state |proofcombgood_s|)) (_ BitVec 1) (ite (|proofcombgood#31| state) (ite (|proofcombgood#34| state) #b1 #b0) (|proofcombgood#16| state))) ; $procmux$29_Y
-(define-fun |proofcombgood#36| ((state |proofcombgood_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|proofcombgood#12| state)) #b1) (|proofcombgood#15| state) (|proofcombgood#35| state))) ; $0$formal$proofcombgood.v:23$13_CHECK[0:0]$15
+(define-fun |proofcombgood_n a_num1| ((state |proofcombgood_s|)) (_ BitVec 4) (|proofcombgood#18| state))
+; yosys-smt2-anyseq proofcombgood#19 1 $auto$setundef.cc:533:execute$119
+; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyseq_auto_setundef_cc_533_execute_119"], "smtname": 19, "smtoffset": 0, "type": "seq", "width": 1}
+(declare-fun |proofcombgood#19| (|proofcombgood_s|) (_ BitVec 1)) ; \_witness_.anyseq_auto_setundef_cc_533_execute_119
+; yosys-smt2-wire _witness_.anyseq_auto_setundef_cc_533_execute_119 1
+(define-fun |proofcombgood_n _witness_.anyseq_auto_setundef_cc_533_execute_119| ((state |proofcombgood_s|)) Bool (= ((_ extract 0 0) (|proofcombgood#19| state)) #b1))
+; yosys-smt2-anyseq proofcombgood#20 1 $auto$setundef.cc:533:execute$117
+; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyseq_auto_setundef_cc_533_execute_117"], "smtname": 20, "smtoffset": 0, "type": "seq", "width": 1}
+(declare-fun |proofcombgood#20| (|proofcombgood_s|) (_ BitVec 1)) ; \_witness_.anyseq_auto_setundef_cc_533_execute_117
+; yosys-smt2-wire _witness_.anyseq_auto_setundef_cc_533_execute_117 1
+(define-fun |proofcombgood_n _witness_.anyseq_auto_setundef_cc_533_execute_117| ((state |proofcombgood_s|)) Bool (= ((_ extract 0 0) (|proofcombgood#20| state)) #b1))
+; yosys-smt2-anyseq proofcombgood#21 1 $auto$setundef.cc:533:execute$115
+; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyseq_auto_setundef_cc_533_execute_115"], "smtname": 21, "smtoffset": 0, "type": "seq", "width": 1}
+(declare-fun |proofcombgood#21| (|proofcombgood_s|) (_ BitVec 1)) ; \_witness_.anyseq_auto_setundef_cc_533_execute_115
+; yosys-smt2-wire _witness_.anyseq_auto_setundef_cc_533_execute_115 1
+(define-fun |proofcombgood_n _witness_.anyseq_auto_setundef_cc_533_execute_115| ((state |proofcombgood_s|)) Bool (= ((_ extract 0 0) (|proofcombgood#21| state)) #b1))
+; yosys-smt2-anyseq proofcombgood#22 1 $auto$setundef.cc:533:execute$113
+; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyseq_auto_setundef_cc_533_execute_113"], "smtname": 22, "smtoffset": 0, "type": "seq", "width": 1}
+(declare-fun |proofcombgood#22| (|proofcombgood_s|) (_ BitVec 1)) ; \_witness_.anyseq_auto_setundef_cc_533_execute_113
+; yosys-smt2-wire _witness_.anyseq_auto_setundef_cc_533_execute_113 1
+(define-fun |proofcombgood_n _witness_.anyseq_auto_setundef_cc_533_execute_113| ((state |proofcombgood_s|)) Bool (= ((_ extract 0 0) (|proofcombgood#22| state)) #b1))
+; yosys-smt2-anyinit proofcombgood#23 1 $auto$clk2fflogic.cc:95:sample_data$82
+; yosys-smt2-witness {"offset": 0, "path": ["\\_witness_", "\\anyinit_auto_clk2fflogic_cc_95_sample_data_82"], "smtname": 23, "smtoffset": 0, "type": "init", "width": 1}
+(declare-fun |proofcombgood#23| (|proofcombgood_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:88:sample_data$$formal$proofcombgood.v:29$18_CHECK#sampled$81
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:88:sample_data$$0$formal$proofcombgood.v:29$18_CHECK[0:0]$20#sampled$83"], "smtname": 24, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |proofcombgood#24| (|proofcombgood_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:88:sample_data$$0$formal$proofcombgood.v:29$18_CHECK[0:0]$20#sampled$83
+(define-fun |proofcombgood#25| ((state |proofcombgood_s|)) (_ BitVec 1) (ite (|proofcombgood#12| state) (|proofcombgood#24| state) (|proofcombgood#23| state))) ; $auto$rtlil.cc:2558:Mux$90
+(define-fun |proofcombgood#26| ((state |proofcombgood_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|proofcombgood#14| state)) #b1) (|proofcombgood#22| state) (|proofcombgood#25| state))) ; $auto$rtlil.cc:2558:Mux$94
+(define-fun |proofcombgood#27| ((state |proofcombgood_s|)) (_ BitVec 1) (ite (|proofcombgood#4| state) (|proofcombgood#21| state) (|proofcombgood#26| state))) ; \_witness_.anyinit_auto_clk2fflogic_cc_95_sample_data_82
+; yosys-smt2-wire _witness_.anyinit_auto_clk2fflogic_cc_95_sample_data_82 1
+(define-fun |proofcombgood_n _witness_.anyinit_auto_clk2fflogic_cc_95_sample_data_82| ((state |proofcombgood_s|)) Bool (= ((_ extract 0 0) (|proofcombgood#27| state)) #b1))
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:88:sample_data$$formal$proofcombgood.v:29$18_EN#sampled$65"], "smtname": 28, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |proofcombgood#28| (|proofcombgood_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:88:sample_data$$formal$proofcombgood.v:29$18_EN#sampled$65
+; yosys-smt2-witness {"offset": 0, "path": ["$auto$clk2fflogic.cc:88:sample_data$$0$formal$proofcombgood.v:29$18_EN[0:0]$21#sampled$67"], "smtname": 29, "smtoffset": 0, "type": "reg", "width": 1}
+(declare-fun |proofcombgood#29| (|proofcombgood_s|) (_ BitVec 1)) ; $auto$clk2fflogic.cc:88:sample_data$$0$formal$proofcombgood.v:29$18_EN[0:0]$21#sampled$67
+(define-fun |proofcombgood#30| ((state |proofcombgood_s|)) (_ BitVec 1) (ite (|proofcombgood#12| state) (|proofcombgood#29| state) (|proofcombgood#28| state))) ; $auto$rtlil.cc:2558:Mux$74
+(define-fun |proofcombgood#31| ((state |proofcombgood_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|proofcombgood#14| state)) #b1) #b0 (|proofcombgood#30| state))) ; $auto$rtlil.cc:2558:Mux$78
+(define-fun |proofcombgood#32| ((state |proofcombgood_s|)) (_ BitVec 1) (ite (|proofcombgood#4| state) #b0 (|proofcombgood#31| state))) ; $formal$proofcombgood.v:29$18_EN
+; yosys-smt2-wire $formal$proofcombgood.v:29$18_EN 1
+(define-fun |proofcombgood_n $formal$proofcombgood.v:29$18_EN| ((state |proofcombgood_s|)) Bool (= ((_ extract 0 0) (|proofcombgood#32| state)) #b1))
+; yosys-smt2-wire $formal$proofcombgood.v:29$18_CHECK 1
+(define-fun |proofcombgood_n $formal$proofcombgood.v:29$18_CHECK| ((state |proofcombgood_s|)) Bool (= ((_ extract 0 0) (|proofcombgood#27| state)) #b1))
+; yosys-smt2-register $auto$clk2fflogic.cc:88:sample_data$/first_cycle#sampled$97 1
+(define-fun |proofcombgood_n $auto$clk2fflogic.cc:88:sample_data$/first_cycle#sampled$97| ((state |proofcombgood_s|)) Bool (= ((_ extract 0 0) (|proofcombgood#9| state)) #b1))
+; yosys-smt2-register $auto$clk2fflogic.cc:88:sample_data$$formal$proofcombgood.v:29$18_EN#sampled$65 1
+(define-fun |proofcombgood_n $auto$clk2fflogic.cc:88:sample_data$$formal$proofcombgood.v:29$18_EN#sampled$65| ((state |proofcombgood_s|)) Bool (= ((_ extract 0 0) (|proofcombgood#28| state)) #b1))
+; yosys-smt2-register $auto$clk2fflogic.cc:88:sample_data$$formal$proofcombgood.v:29$18_CHECK#sampled$81 1
+(define-fun |proofcombgood_n $auto$clk2fflogic.cc:88:sample_data$$formal$proofcombgood.v:29$18_CHECK#sampled$81| ((state |proofcombgood_s|)) Bool (= ((_ extract 0 0) (|proofcombgood#23| state)) #b1))
+; yosys-smt2-register $auto$clk2fflogic.cc:88:sample_data$$0$formal$proofcombgood.v:29$18_EN[0:0]$21#sampled$67 1
+(define-fun |proofcombgood_n $auto$clk2fflogic.cc:88:sample_data$$0$formal$proofcombgood.v:29$18_EN[0:0]$21#sampled$67| ((state |proofcombgood_s|)) Bool (= ((_ extract 0 0) (|proofcombgood#29| state)) #b1))
+; yosys-smt2-register $auto$clk2fflogic.cc:88:sample_data$$0$formal$proofcombgood.v:29$18_CHECK[0:0]$20#sampled$83 1
+(define-fun |proofcombgood_n $auto$clk2fflogic.cc:88:sample_data$$0$formal$proofcombgood.v:29$18_CHECK[0:0]$20#sampled$83| ((state |proofcombgood_s|)) Bool (= ((_ extract 0 0) (|proofcombgood#24| state)) #b1))
+; yosys-smt2-register $auto$clk2fflogic.cc:74:sample_control_edge$/clk#sampled$101 1
+(define-fun |proofcombgood_n $auto$clk2fflogic.cc:74:sample_control_edge$/clk#sampled$101| ((state |proofcombgood_s|)) Bool (= ((_ extract 0 0) (|proofcombgood#10| state)) #b1))
+; yosys-smt2-register $auto$clk2fflogic.cc:62:sample_control$/rst#sampled$107 1
+(define-fun |proofcombgood_n $auto$clk2fflogic.cc:62:sample_control$/rst#sampled$107| ((state |proofcombgood_s|)) Bool (= ((_ extract 0 0) (|proofcombgood#14| state)) #b1))
+; yosys-smt2-assert 0 $assert$proofcombgood.v:29$32 proofcombgood.v:29.20-30.38
+(define-fun |proofcombgood_a 0| ((state |proofcombgood_s|)) Bool (or (= ((_ extract 0 0) (|proofcombgood#27| state)) #b1) (not (= ((_ extract 0 0) (|proofcombgood#32| state)) #b1)))) ; $assert$proofcombgood.v:29$32
+(define-fun |proofcombgood#33| ((state |proofcombgood_s|)) Bool (= (|proofcombgood#8| state) (|proofcombgood#18| state))) ; $eq$proofcombgood.v:26$22_Y
+(define-fun |proofcombgood#34| ((state |proofcombgood_s|)) Bool (= (|proofcombgood#7| state) (|proofcombgood#17| state))) ; $eq$proofcombgood.v:27$23_Y
+(define-fun |proofcombgood#35| ((state |proofcombgood_s|)) Bool (and (or  (|proofcombgood#33| state) false) (or  (|proofcombgood#34| state) false))) ; $logic_and$proofcombgood.v:26$24_Y
+(define-fun |proofcombgood#36| ((state |proofcombgood_s|)) Bool (and (or  (|proofcombgood#35| state) false) (or  (|proofcombgood#2| state) false))) ; $logic_and$proofcombgood.v:26$26_Y
+(define-fun |proofcombgood#37| ((state |proofcombgood_s|)) Bool (and (or  (|proofcombgood#36| state) false) (or  (|proofcombgood#0| state) false))) ; $logic_and$proofcombgood.v:26$28_Y
+(define-fun |proofcombgood#38| ((state |proofcombgood_s|)) Bool (= (ite (|proofcombgood#1| state) #b1 #b0) (ite (|proofcombgood#3| state) #b1 #b0))) ; $eq$proofcombgood.v:28$29_Y
+(define-fun |proofcombgood#39| ((state |proofcombgood_s|)) Bool (and (or  (|proofcombgood#37| state) false) (or  (|proofcombgood#38| state) false))) ; $logic_and$proofcombgood.v:26$30_Y
+(define-fun |proofcombgood#40| ((state |proofcombgood_s|)) (_ BitVec 1) (ite (|proofcombgood#39| state) #b1 #b0)) ; $procmux$35_Y
+(define-fun |proofcombgood#41| ((state |proofcombgood_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|proofcombgood#16| state)) #b1) #b0 (|proofcombgood#40| state))) ; $0$formal$proofcombgood.v:29$18_EN[0:0]$21
+(define-fun |proofcombgood#42| ((state |proofcombgood_s|)) Bool (= (|proofcombgood#5| state) (|proofcombgood#6| state))) ; $eq$proofcombgood.v:30$31_Y
+(define-fun |proofcombgood#43| ((state |proofcombgood_s|)) (_ BitVec 1) (ite (|proofcombgood#39| state) (ite (|proofcombgood#42| state) #b1 #b0) (|proofcombgood#20| state))) ; $procmux$40_Y
+(define-fun |proofcombgood#44| ((state |proofcombgood_s|)) (_ BitVec 1) (ite (= ((_ extract 0 0) (|proofcombgood#16| state)) #b1) (|proofcombgood#19| state) (|proofcombgood#43| state))) ; $0$formal$proofcombgood.v:29$18_CHECK[0:0]$20
 (define-fun |proofcombgood_a| ((state |proofcombgood_s|)) Bool (and
   (|proofcombgood_a 0| state)
   (|bug_eval_a| (|proofcombgood_h bug_eval| state))
@@ -355,36 +383,36 @@
   (|goodbranch_u| (|proofcombgood_h goodbranch| state))
 ))
 (define-fun |proofcombgood_i| ((state |proofcombgood_s|)) Bool (and
-  (= (= ((_ extract 0 0) (|proofcombgood#24| state)) #b1) false) ; $auto$clk2fflogic.cc:88:sample_data$$formal$proofcombgood.v:23$13_EN#sampled$54
-  (= (= ((_ extract 0 0) (|proofcombgood#25| state)) #b1) false) ; $auto$clk2fflogic.cc:88:sample_data$$0$formal$proofcombgood.v:23$13_EN[0:0]$16#sampled$56
-  (= (= ((_ extract 0 0) (|proofcombgood#20| state)) #b1) false) ; $auto$clk2fflogic.cc:88:sample_data$$0$formal$proofcombgood.v:23$13_CHECK[0:0]$15#sampled$72
-  (= (= ((_ extract 0 0) (|proofcombgood#6| state)) #b1) true) ; $auto$clk2fflogic.cc:74:sample_control_edge$/clk#sampled$58
-  (= (= ((_ extract 0 0) (|proofcombgood#10| state)) #b1) false) ; $auto$clk2fflogic.cc:62:sample_control$/rst#sampled$64
+  (= (= ((_ extract 0 0) (|proofcombgood#28| state)) #b1) false) ; $auto$clk2fflogic.cc:88:sample_data$$formal$proofcombgood.v:29$18_EN#sampled$65
+  (= (= ((_ extract 0 0) (|proofcombgood#29| state)) #b1) false) ; $auto$clk2fflogic.cc:88:sample_data$$0$formal$proofcombgood.v:29$18_EN[0:0]$21#sampled$67
+  (= (= ((_ extract 0 0) (|proofcombgood#24| state)) #b1) false) ; $auto$clk2fflogic.cc:88:sample_data$$0$formal$proofcombgood.v:29$18_CHECK[0:0]$20#sampled$83
+  (= (= ((_ extract 0 0) (|proofcombgood#10| state)) #b1) true) ; $auto$clk2fflogic.cc:74:sample_control_edge$/clk#sampled$101
+  (= (= ((_ extract 0 0) (|proofcombgood#14| state)) #b1) false) ; $auto$clk2fflogic.cc:62:sample_control$/rst#sampled$107
   (|bug_eval_i| (|proofcombgood_h bug_eval| state))
   (|goodbranch_i| (|proofcombgood_h goodbranch| state))
 ))
 (define-fun |proofcombgood_h| ((state |proofcombgood_s|)) Bool (and
   (= (|proofcombgood_is| state) (|bug_eval_is| (|proofcombgood_h bug_eval| state)))
-  (= (|proofcombgood#0| state) (|bug_eval_n rst| (|proofcombgood_h bug_eval| state))) ; bug_eval.rst
-  (= (|proofcombgood#1| state) (|bug_eval_n result| (|proofcombgood_h bug_eval| state))) ; bug_eval.result
-  (= (= ((_ extract 0 0) (|proofcombgood#7| state)) #b1) (|bug_eval_n clk| (|proofcombgood_h bug_eval| state))) ; bug_eval.clk
-  (= (|proofcombgood#13| state) (|bug_eval_n a_num2| (|proofcombgood_h bug_eval| state))) ; bug_eval.a_num2
-  (= (|proofcombgood#14| state) (|bug_eval_n a_num1| (|proofcombgood_h bug_eval| state))) ; bug_eval.a_num1
+  (= (|proofcombgood#4| state) (|bug_eval_n rst| (|proofcombgood_h bug_eval| state))) ; bug_eval.rst
+  (= (|proofcombgood#5| state) (|bug_eval_n result| (|proofcombgood_h bug_eval| state))) ; bug_eval.result
+  (= (= ((_ extract 0 0) (|proofcombgood#11| state)) #b1) (|bug_eval_n clk| (|proofcombgood_h bug_eval| state))) ; bug_eval.clk
+  (= (|proofcombgood#17| state) (|bug_eval_n a_num2| (|proofcombgood_h bug_eval| state))) ; bug_eval.a_num2
+  (= (|proofcombgood#18| state) (|bug_eval_n a_num1| (|proofcombgood_h bug_eval| state))) ; bug_eval.a_num1
   (= (|proofcombgood_is| state) (|goodbranch_is| (|proofcombgood_h goodbranch| state)))
-  (= (|proofcombgood#2| state) (|goodbranch_n out| (|proofcombgood_h goodbranch| state))) ; goodbranch.out
-  (= (|proofcombgood#3| state) (|goodbranch_n num2| (|proofcombgood_h goodbranch| state))) ; goodbranch.num2
-  (= (|proofcombgood#4| state) (|goodbranch_n num1| (|proofcombgood_h goodbranch| state))) ; goodbranch.num1
+  (= (|proofcombgood#6| state) (|goodbranch_n out| (|proofcombgood_h goodbranch| state))) ; goodbranch.out
+  (= (|proofcombgood#7| state) (|goodbranch_n num2| (|proofcombgood_h goodbranch| state))) ; goodbranch.num2
+  (= (|proofcombgood#8| state) (|goodbranch_n num1| (|proofcombgood_h goodbranch| state))) ; goodbranch.num1
   (|bug_eval_h| (|proofcombgood_h bug_eval| state))
   (|goodbranch_h| (|proofcombgood_h goodbranch| state))
 ))
 (define-fun |proofcombgood_t| ((state |proofcombgood_s|) (next_state |proofcombgood_s|)) Bool (and
-  (= (|proofcombgood#33| state) (|proofcombgood#25| next_state)) ; $auto$clk2fflogic.cc:95:sample_data$57 $auto$clk2fflogic.cc:88:sample_data$$0$formal$proofcombgood.v:23$13_EN[0:0]$16#sampled$56
-  (= (|proofcombgood#28| state) (|proofcombgood#24| next_state)) ; $auto$clk2fflogic.cc:95:sample_data$55 $auto$clk2fflogic.cc:88:sample_data$$formal$proofcombgood.v:23$13_EN#sampled$54
-  (= (|proofcombgood#36| state) (|proofcombgood#20| next_state)) ; $auto$clk2fflogic.cc:95:sample_data$73 $auto$clk2fflogic.cc:88:sample_data$$0$formal$proofcombgood.v:23$13_CHECK[0:0]$15#sampled$72
-  (= (|proofcombgood#23| state) (|proofcombgood#19| next_state)) ; $auto$clk2fflogic.cc:95:sample_data$71 $auto$clk2fflogic.cc:88:sample_data$$formal$proofcombgood.v:23$13_CHECK#sampled$70
-  (= (ite (|proofcombgood#0| state) #b1 #b0) (|proofcombgood#10| next_state)) ; $auto$clk2fflogic.cc:67:sample_control$65 $auto$clk2fflogic.cc:62:sample_control$\rst#sampled$64
-  (= (|proofcombgood#7| state) (|proofcombgood#6| next_state)) ; $auto$clk2fflogic.cc:79:sample_control_edge$59 $auto$clk2fflogic.cc:74:sample_control_edge$\clk#sampled$58
-  (= (|proofcombgood#12| state) (|proofcombgood#5| next_state)) ; $auto$clk2fflogic.cc:95:sample_data$87 $auto$clk2fflogic.cc:88:sample_data$\first_cycle#sampled$86
+  (= (|proofcombgood#41| state) (|proofcombgood#29| next_state)) ; $auto$clk2fflogic.cc:95:sample_data$68 $auto$clk2fflogic.cc:88:sample_data$$0$formal$proofcombgood.v:29$18_EN[0:0]$21#sampled$67
+  (= (|proofcombgood#32| state) (|proofcombgood#28| next_state)) ; $auto$clk2fflogic.cc:95:sample_data$66 $auto$clk2fflogic.cc:88:sample_data$$formal$proofcombgood.v:29$18_EN#sampled$65
+  (= (|proofcombgood#44| state) (|proofcombgood#24| next_state)) ; $auto$clk2fflogic.cc:95:sample_data$84 $auto$clk2fflogic.cc:88:sample_data$$0$formal$proofcombgood.v:29$18_CHECK[0:0]$20#sampled$83
+  (= (|proofcombgood#27| state) (|proofcombgood#23| next_state)) ; $auto$clk2fflogic.cc:95:sample_data$82 $auto$clk2fflogic.cc:88:sample_data$$formal$proofcombgood.v:29$18_CHECK#sampled$81
+  (= (ite (|proofcombgood#4| state) #b1 #b0) (|proofcombgood#14| next_state)) ; $auto$clk2fflogic.cc:67:sample_control$108 $auto$clk2fflogic.cc:62:sample_control$\rst#sampled$107
+  (= (|proofcombgood#11| state) (|proofcombgood#10| next_state)) ; $auto$clk2fflogic.cc:79:sample_control_edge$102 $auto$clk2fflogic.cc:74:sample_control_edge$\clk#sampled$101
+  (= (|proofcombgood#16| state) (|proofcombgood#9| next_state)) ; $auto$clk2fflogic.cc:95:sample_data$98 $auto$clk2fflogic.cc:88:sample_data$\first_cycle#sampled$97
   (|bug_eval_t| (|proofcombgood_h bug_eval| state) (|proofcombgood_h bug_eval| next_state))
   (|goodbranch_t| (|proofcombgood_h goodbranch| state) (|proofcombgood_h goodbranch| next_state))
 )) ; end of module proofcombgood

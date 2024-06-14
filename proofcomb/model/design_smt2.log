@@ -82,21 +82,21 @@ Module proofcombgood directly or indirectly contains formal properties -> settin
 
 === proofcombgood ===
 
-   Number of wires:                 38
-   Number of wire bits:             58
-   Number of public wires:          14
-   Number of public wire bits:      34
+   Number of wires:                 46
+   Number of wire bits:             66
+   Number of public wires:          18
+   Number of public wire bits:      38
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                 32
+   Number of cells:                 36
      $anyinit                        2
      $anyseq                         4
      $assert                         1
-     $eq                             3
+     $eq                             4
      $eqx                            1
      $ff                             5
-     $logic_and                      1
+     $logic_and                      4
      $mux                           13
      bug_eval                        1
      goodbranch                      1
@@ -153,22 +153,22 @@ Module proofcombgood directly or indirectly contains formal properties -> settin
        topmsb_1                      1
      goodbranch                      1
 
-   Number of wires:                 73
-   Number of wire bits:            151
-   Number of public wires:          42
-   Number of public wire bits:     120
+   Number of wires:                 81
+   Number of wire bits:            159
+   Number of public wires:          46
+   Number of public wire bits:     124
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:                 43
+   Number of cells:                 47
      $add                            3
      $anyinit                        2
      $anyseq                         4
      $assert                         1
-     $eq                             3
+     $eq                             4
      $eqx                            2
      $ff                             8
-     $logic_and                      2
+     $logic_and                      5
      $mux                           15
      $not                            2
      $or                             1
@@ -185,6 +185,6 @@ Creating SMT-LIBv2 representation of module topmsb_1.
 Creating SMT-LIBv2 representation of module bug_eval.
 Creating SMT-LIBv2 representation of module proofcombgood.
 
-End of script. Logfile hash: f7f5ca6a35, CPU: user 0.00s system 0.02s, MEM: 11.25 MB peak
+End of script. Logfile hash: a51e414091, CPU: user 0.00s system 0.02s, MEM: 11.36 MB peak
 Yosys 0.36+3 (git sha1 a53032104, clang 10.0.0-4ubuntu1 -fPIC -Os)
-Time spent: 58% 2x write_smt2 (0 sec), 13% 2x read_ilang (0 sec), ...
+Time spent: 60% 2x write_smt2 (0 sec), 12% 2x read_ilang (0 sec), ...

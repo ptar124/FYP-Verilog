@@ -39,10 +39,12 @@ output reg [4:0] result
     assign y_viv1 = 1;
     assign w_msb = 0;
 
+/*
     assign a_num1 = 1;
     assign a_num2 = 2;
     assign b_num1 = 4;
     assign b_num2 = 8;
+    */
 
     goodbranch goodbranch_instance (
         a_num1,

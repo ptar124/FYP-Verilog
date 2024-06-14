@@ -24,11 +24,11 @@ output reg [4:0] result
     wire y_msb;
     wire w_msb;
     
-    /*
+    
     initial begin
         result = 5'b00000;
     end
-    */
+    
 
     top_1 eval_top_1 (.y(y1), .w(in_shiftandmult));
     //top_vivado eval_top_vivado (.y(y_viv1), .w0(w0_viv1));
@@ -39,10 +39,12 @@ output reg [4:0] result
     assign y_viv1 = 1;
     assign w_msb = 0;
 
+/*
     assign a_num1 = 1;
     assign a_num2 = 2;
     assign b_num1 = 4;
     assign b_num2 = 8;
+    */
 
     goodbranch goodbranch_instance (
         a_num1,

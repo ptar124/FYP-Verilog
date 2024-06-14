@@ -7,10 +7,10 @@ sed 's/topmsb/topmsb_1/' wrongmsb.v > wrongmsb_yosys.v
 sed 's/topmsb/topmsb_2/' wrongmsb.v > wrongmsb_identity.v
 
 #/mnt/c/Users/ptar1/Documents/yosys-yosys-0.8b/yosys-yosys-0.8b/build/yosys -p 'read -formal rtl_yosys.v; synth; write_verilog -noattr syn_yosys.v'
-/mnt/c/Users/ptar1/Documents/yosys-yosys-0.9b/yosys-yosys-0.9b/build/yosys -p 'read_verilog -formal wrongmsb_yosys.v; synth; write_verilog -noattr syn_wrongmsb.v'
+#/mnt/c/Users/ptar1/Documents/yosys-yosys-0.9b/yosys-yosys-0.9b/build/yosys -p 'read_verilog -formal wrongmsb_yosys.v; synth; write_verilog -noattr syn_wrongmsb.v'
 
 yosys -p 'read_verilog -formal rtl_yosys.v; synth; write_verilog -noattr syn_yosys.v'
-#yosys -p 'read_verilog -formal wrongmsb_yosys.v; synth; write_verilog -noattr syn_wrongmsb.v'
+yosys -p 'read_verilog -formal wrongmsb_yosys.v; synth; write_verilog -noattr syn_wrongmsb.v'
 
 #sby -f proof.sby
 #sby -f proofmsb.sby

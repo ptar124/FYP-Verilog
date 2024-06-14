@@ -3,4 +3,4 @@ Elapsed process time [H:MM:SS (secs)]: 0:00:00 (0)
 engine_0 (smtbmc) returned pass for basecase
 engine_0 (smtbmc) returned FAIL for induction
 counterexample trace [induction]: engine_0/trace_induct.vcd
-  failed assertion proofcombgood.$assert$proofcombgood.v:23$21 at proofcombgood.v:23.56-24.38 in step 0
+  failed assertion proofcombgood.$assert$proofcombgood.v:29$32 at proofcombgood.v:29.20-30.38 in step 0

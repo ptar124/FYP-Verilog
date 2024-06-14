@@ -1,4 +1,4 @@
-module proofcombgood (result, out, clk, rst, num1, num2, a_num1, a_num2);
+module proofcombgood (result, out, clk, rst, num1, num2, a_num1, a_num2, y1, y_viv1, y_msb, w_msb);
     output wire [4:0] result;
     output wire [4:0] out;
     input wire clk;
@@ -6,6 +6,8 @@ module proofcombgood (result, out, clk, rst, num1, num2, a_num1, a_num2);
 
     input wire [3:0] num1, num2;
     input wire [3:0] a_num1, a_num2;
+
+    input wire y1, y_viv1, y_msb, w_msb;
 
     reg first_cycle;
 
@@ -20,7 +22,11 @@ module proofcombgood (result, out, clk, rst, num1, num2, a_num1, a_num2);
         if (first_cycle) begin
           first_cycle <= 1'b0;
         end else begin
-            if (num1 == a_num1 && num2 == a_num2) begin
+            if (
+            num1 == a_num1 &&
+            num2 == a_num2 &&
+            y1 == 1 && y_viv1 == 1 && y_msb == w_msb
+            ) begin
                 assert(result == out);
             end
         end

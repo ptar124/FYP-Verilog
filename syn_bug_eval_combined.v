@@ -76,8 +76,8 @@ module bug_eval(clk, rst, a_num1, a_num2, a_out, b_num1, b_num2, b_out, result);
   assign result[3] = _0_ ? b_out[3] : a_out[3];
   assign result[4] = _0_ ? b_out[4] : a_out[4];
   badbranch badbranch_instance (
-    .num1(4'h4),
-    .num2(4'h8),
+    .num1(b_num1),
+    .num2(b_num2),
     .out(b_out)
   );
   top_1 eval_top_1 (
@@ -90,14 +90,10 @@ module bug_eval(clk, rst, a_num1, a_num2, a_out, b_num1, b_num2, b_out, result);
     .y(y_msb)
   );
   goodbranch goodbranch_instance (
-    .num1(4'h1),
-    .num2(4'h2),
+    .num1(a_num1),
+    .num2(a_num2),
     .out(a_out)
   );
-  assign a_num1 = 4'h1;
-  assign a_num2 = 4'h2;
-  assign b_num1 = 4'h4;
-  assign b_num2 = 4'h8;
   assign in_shiftandmult = 3'h4;
   assign w_msb = 1'h0;
   assign y_viv1 = 1'h1;
@@ -158,12 +154,10 @@ endmodule
 module topmsb_1(y, clk, w);
   input clk;
   wire clk;
-  wire [1:0] i;
   input w;
   wire w;
   output y;
   reg y = 1'h0;
   always @(posedge clk)
-    y <= 1'h1;
-  assign i = 2'h0;
+    y <= w;
 endmodule
